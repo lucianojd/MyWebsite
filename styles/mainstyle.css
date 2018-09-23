@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+}
+
+.main {
+	display: flex;
+	height: 100vh;
+}
+
+.sidebar {
+	background-image: url("images/black.jpg");
+	width: 20%;
+}
+
+.mainContent {
+	background-image: url("images/white.jpg");
+	flex-grow: 1;
+	overflow-y: scroll;
+}
