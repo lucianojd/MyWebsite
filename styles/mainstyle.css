@@ -9,11 +9,31 @@ body {
 
 .sidebar {
 	background-image: url("images/black.jpg");
-	width: 20%;
+	width: 15%;
 }
 
 .mainContent {
 	background-image: url("images/white.jpg");
 	flex-grow: 1;
-	overflow-y: scroll;
+}
+
+table.menu {
+	border-color: white;
+	margin: auto;
+	margin-top: 20px;
+}
+
+td.menu {
+	text-align: center;
+}
+
+h1.menu {
+	color: white;
+	font-family: Arial;
+}
+
+iframe {
+	height: 99vh;
+	width: 85vw;
+	border: none;
 }
