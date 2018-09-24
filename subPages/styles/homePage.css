@@ -1,0 +1,19 @@
+h2.homepage {
+	padding-left: 40px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50vw;
+	margin: auto;
+	margin-bottom: 100px;
+}
+		
+.box1 {
+	flex: 0 0 100%;
+	margin:auto;
+	border-style: solid;
+	text-align: center;
+}
