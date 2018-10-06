@@ -1,0 +1,55 @@
+
+.main {
+	display: flex;
+	height: 100vh;
+}
+
+.sidebar {
+	background-image: url("images/black.jpg");
+	width: 15%;
+}
+
+.mainContent {
+	background-image: url("images/white.jpg");
+	flex-grow: 1;
+}
+
+div.body {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+table.menu {
+	border-color: white;
+	margin: auto;
+	margin-top: 20vh;
+	vertical-align: center;
+}
+
+td.menu {
+	text-align: left;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	transition: 0.25s;
+}
+
+td.menu:hover {
+	padding-left: 9px;
+}
+
+h1.menu {
+	color: white;
+	font-family: Arial;
+}
+
+iframe {
+	height: 99vh;
+	width: 85vw;
+	border: none;
+}
+
+a.menu {
+	text-decoration: none;
+}
