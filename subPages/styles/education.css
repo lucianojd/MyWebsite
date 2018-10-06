@@ -1,8 +1,40 @@
-table.education {
-	width: 500px;
+body {
+	font-family: Helvetica;
+}
+
+table {
+	background-color: white;
+	border-style: solid;
+	border-color: black;
 	margin: auto;
+	border-collapse: collapse;
+}
+
+td {
+	border-style: solid;
+	border-style: black;
+	padding: 4px;
+}
+
+td.education1 {
+	text-align: center;
 }
 
 td.education2 {
 	text-align: right;
-} 
+}
+
+p {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+p.body {
+	margin-right: 40px;
+	margin-left: 40px;
+	text-align-last: left;
+}
+
+h2 {
+	margin-left: 40px;
+}
