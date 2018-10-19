@@ -10,23 +10,37 @@ table {
 	border-collapse: collapse;
 }
 
+th {
+	padding: 5px;
+}
+
 td {
 	border-style: solid;
 	border-style: black;
 	padding: 4px;
 }
 
-td.education1 {
+td.title {
 	text-align: center;
 }
 
-td.education2 {
+td.description {
 	text-align: right;
 }
 
-p {
-	margin-left: 0px;
-	margin-right: 0px;
+td.titleG {
+	text-align: center;
+	background-color: lightgrey;
+}
+
+td.descriptionG {
+	text-align: right;
+	background-color: lightgrey;
+}
+
+p.table {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 p.body {
