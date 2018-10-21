@@ -1,5 +1,15 @@
-body {
-	font-family: Helvetica;
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+div.body{
+	margin-top: 40px;
+}
+
+div.title{
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 table {
@@ -25,7 +35,11 @@ td.title {
 }
 
 td.description {
-	text-align: right;
+	text-align: center;
+}
+
+td.download {
+	text-align: center;
 }
 
 td.titleG {
@@ -34,21 +48,11 @@ td.titleG {
 }
 
 td.descriptionG {
-	text-align: right;
+	text-align: center;
 	background-color: lightgrey;
 }
 
-p.table {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-p.body {
-	margin-right: 40px;
-	margin-left: 40px;
-	text-align-last: left;
-}
-
-h2 {
-	margin-left: 40px;
+td.downloadG {
+	text-align: center;
+	background-color: lightgrey;
 }
