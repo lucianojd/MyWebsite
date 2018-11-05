@@ -2,6 +2,10 @@ body {
 	font-family: Helvetica;
 }
 
+div.body{
+	margin-top: 40px;
+}
+
 table {
 	background-color: white;
 	border-style: solid;

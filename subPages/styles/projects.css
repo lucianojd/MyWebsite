@@ -3,10 +3,6 @@ a {
 	text-decoration: underline;
 }
 
-div.body{
-	margin-top: 40px;
-}
-
 div.title{
 	text-align: center;
 	margin-bottom: 40px;
@@ -16,6 +12,7 @@ table {
 	background-color: white;
 	border-style: solid;
 	border-color: black;
+	width: 80vw;
 	margin: auto;
 	border-collapse: collapse;
 }
@@ -35,7 +32,7 @@ td.title {
 }
 
 td.description {
-	text-align: center;
+	text-align: left;
 }
 
 td.download {
@@ -48,7 +45,7 @@ td.titleG {
 }
 
 td.descriptionG {
-	text-align: center;
+	text-align: left;
 	background-color: lightgrey;
 }
 

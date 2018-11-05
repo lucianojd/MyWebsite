@@ -3,6 +3,10 @@ body {
 	font-family: Helvetica;
 }
 
+div.body{
+	margin-top: 40px;
+}
+
 p {
 	text-align-last: left;
 	margin-right: 40px;
