@@ -1,2 +1,3 @@
 # MyWebsite
-This website contains information about myself for job applications.
+MyWebsite is meant to be an extension of my resume. It contains pages discussing my
+interests, skills, education and projects.
