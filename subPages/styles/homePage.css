@@ -1,3 +1,11 @@
+/* 
+File Name: homePage.css
+Author: Luciano De Gianni      
+Date Modified: Nov.26th, 2018 
+Description: homePage.css contains specific styles
+for homePage.html.
+*/
+
 .container {
 	display: flex;
 	align-items: center;

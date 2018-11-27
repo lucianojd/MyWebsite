@@ -1,9 +1,11 @@
-<!-- File Name: index.html 	       -->
-<!-- Author: Luciano De Gianni     -->
-<!-- Date Modified: Nov.14th, 2018 -->
-<!-- Description: The main page for lucianod.me. All general styles are
-	 contained in mainStyle.css. All specific styles are contained in 
-	 .css with the same name as their respective .html file.-->
+<!--
+File Name: index.html
+Author: Luciano De Gianni    
+Date Modified: Nov.14th, 2018 
+Description: The main page for lucianod.me. All general styles are
+contained in mainStyle.css. All specific styles are contained in 
+.css with the same name as their respective .html file.
+-->
 
 <html>
   <head>
@@ -14,7 +16,11 @@
 	<link rel="stylesheet" href="subPages\styles\index.css" type="text/css"/>
   </head>
 <body>
+
+<!--Flexbox for the layout of the website. Details in index.css-->
 <div class="main">
+	
+	<!--Navigation menu-->
 	<div class="sidebar">
 		<table class="menu">
 			<tr class="menu">
@@ -55,11 +61,11 @@
 		</table>
 	</div>
 	
+	<!--iframe for the main web page.-->
 	<div class="mainContent">
 		<iframe name="main" src="subPages\homePage.html">
 		</iframe>
 	</div>
-
 </div>
 </body>
 </html>

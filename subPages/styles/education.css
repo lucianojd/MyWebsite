@@ -1,4 +1,16 @@
+/* 
+File Name: education.css
+Author: Luciano De Gianni      
+Date Modified: Nov.26th, 2018 
+Description: education.css contains styles specific to 
+education.html. It contains duplicate styles from 
+mainStyle.css. For some reason mainStyle.css was conflicting
+with the table styles. I have yet to determine why.
+*/
+
 body {
+	margin: 0px;
+	padding: 0px;
 	font-family: Helvetica;
 }
 
@@ -24,6 +36,27 @@ td {
 	padding: 5px;
 }
 
+
+p.table {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+p.body {
+	margin-right: 40px;
+	margin-left: 40px;
+	text-align-last: left;
+}
+
+h2 {
+	margin-left: 40px;
+}
+
+/*
+The capital G indicates a grey background.
+Other than the background color
+*/
+
 td.title {
 	text-align: center;
 }
@@ -40,19 +73,4 @@ td.titleG {
 td.descriptionG {
 	text-align: right;
 	background-color: lightgrey;
-}
-
-p.table {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-p.body {
-	margin-right: 40px;
-	margin-left: 40px;
-	text-align-last: left;
-}
-
-h2 {
-	margin-left: 40px;
 }

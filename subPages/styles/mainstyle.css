@@ -1,10 +1,14 @@
+/* 
+File Name: mainStyle.css
+Author: Luciano De Gianni      
+Date Modified: Nov.26th, 2018 
+Description: mainStyle.css contains the over-arching styles.
+*/
+
 body {
 	margin: 0;
+	padding: 0px;
 	font-family: Helvetica;
-}
-
-div.body{
-	margin-top: 40px;
 }
 
 p {
@@ -18,6 +22,10 @@ h2 {
 	margin-left: 40px;
 }
 
-a {
+a.menu{
 	text-decoration: none;
+}
+
+div.body{
+	margin-top: 40px;
 }

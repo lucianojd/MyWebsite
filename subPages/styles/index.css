@@ -1,3 +1,11 @@
+/* 
+File Name: index.css
+Author: Luciano De Gianni      
+Date Modified: Nov.26th, 2018 
+Description: index.css contains styles for the mainpage where
+all other pages are displayed. The styles for the main flexbox,
+side bar menu, and iframe are contained in this file.
+*/
 
 .main {
 	display: flex;
@@ -12,6 +20,11 @@
 .mainContent {
 	background-image: url("images/white.jpg");
 	flex-grow: 1;
+}
+
+h1.menu {
+	color: white;
+	font-family: Arial;
 }
 
 div.body {
@@ -37,11 +50,6 @@ td.menu {
 
 td.menu:hover {
 	padding-left: 9px;
-}
-
-h1.menu {
-	color: white;
-	font-family: Arial;
 }
 
 iframe {
