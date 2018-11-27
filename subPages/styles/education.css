@@ -9,6 +9,8 @@ with the table styles. I have yet to determine why.
 */
 
 body {
+	padding: 0px;
+	margin: 0px;
 	font-family: Helvetica;
 }
 
