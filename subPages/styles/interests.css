@@ -1,7 +1,14 @@
 /* 
 File Name: interests.css
 Author: Luciano De Gianni      
-Date Modified: Nov.26th, 2018 
+Date Modified: Dec.11th, 2018 
 Description: Contains specific styles for interest.html.
 Currently no specific styles needed.
 */
+
+img {
+	border-style: solid;
+	border-color: black;
+	width: 50vw;
+	height: 50hw;
+}
