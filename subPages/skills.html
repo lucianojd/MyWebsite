@@ -1,99 +1,85 @@
 <!--
 File Name: skills.html
 Author: Luciano De Gianni    
-Date Modified: Dec.8th, 2018 
+Date Modified: Jan.19th, 2018 
 Description: skills.html contains a list
 of my technical skills and soft skills.
 -->
-
 
 <html>
 	<head>
 		<title>
 			Skills
 		</title>
-		<link rel="stylesheet" href="styles\skills.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\main.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\a.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\div.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\heading.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\p.css" type="text/css"/>
+		<link rel="stylesheet" href="styles\table.css" type="text/css"/>
 	</head>
 <body>
+
+<!-- Table for jumping to skills -->
 <div class="body">
-	<table>
+	<a name="table">
+		<h3 class="title">
+			You can use this table to jump back and forth between skills
+		</h3>
+	</a>
+	<table class="one">
 		<tr>
-			<th colspan="3">
-				<a name="table">
-					<P>
-						You can use this table to jump back and forth between skills
-					</p>
-				</a>
+			<th class="one" colspan="3">
+				Technical Skills
 			</th>
 		</tr>
 		<tr>
-			<th colspan="3" class="grey">
-				<a>
-					<P>
-						Technical Skills
-					</p>
-				</a>
-			</th>
-		</tr>
-		<tr>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#arch_comp">
-					<p>
-						Architecture of Computers
-					</p>
+					Architecture of Computers
 				</a>
 			</td>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#math">
-					<p>
-						Mathematics
-					</p>
+					Mathematics
 				</a>
 			</td>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#prog_lang">
-					<p>
-						Programming Languages
-					</p>
+					Programming Languages
 				</a>
 			</td>
 		</tr>
-			<th colspan="3" class="grey">
-				<a>
-					<P>
-						Soft Skills
-					</p>
-				</a>
+			<th class="one" colspan="3">
+				Soft Skills
 			</th>
 		<tr>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#comm">
-					<p>
-						Communication
-					</p>
+					Communication
 				</a>
 			</td>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#public_speak">
-					<p>
-						Public Speaking
-					</p>
+					Public Speaking
 				</a>
 			</td>
-			<td class="title">
+			<td class="skills">
 				<a class="link" href="#team">
-					<p>
-						Teamwork
-					</p>
+					Teamwork
 				</a>
 			</td>
 		</tr>
 	</table>
-	
+</div>
+
+<!-- Technical skills box. -->
+<div class="body">	
 	<h2 class="heading">
 		Technical Skills
 	</h2>
-	
+</div>
+<div class="border">
 	<a name="arch_comp">
 		<h2>
 			Architecture of Computers
@@ -120,7 +106,7 @@ of my technical skills and soft skills.
 		</h2>
 	</a>
 	<p class="body">
-	I've completed a 100 level courses for linear algebra and two 100 level courses for calculus. I have completed a 200 level course for time signals and systems.
+	I've completed one 100 level course for linear algebra and two 100 level courses for calculus. I have completed a 200 level course for time signals and systems.
 	Solving matrices, matrix arithmetic, eigenvalues and eigenvectors, transformation matrices, complex numbers, and working with spaces of 
 	various dimension described by real or complex valued unit vectors are all concepts I've learned from linear algebra. Tools I've learned
 	in calculus are derivation, integration and various techniques for performing the operations. In time signals and systems, I gained 
@@ -152,11 +138,15 @@ of my technical skills and soft skills.
 			Back to Table
 		</button>
 	</a>
-	
+</div>
+
+<!-- Soft skills box. -->
+<div class="body">
 	<h2 class="heading">
 		Soft Skills
 	</h2>
-	
+</div>
+<div class="border">
 	<a name="comm">
 		<h2>
 			Communication
@@ -168,7 +158,7 @@ of my technical skills and soft skills.
 	on two occasions. The first occasion was at UFV. My group and I needed to design a device to collect algae; the algae was to
 	be used as a food source in a remote village. We communicated regularly and delivered the presentation on time. The second group
 	project I was a member of was at UVIC. My group and I needed to develop a method of reducing single occupancy vehicles in the
-	CRD (Capital Region District) on Victoria Island. We used slack to coordinate our group meetings. Often, I was the one initiating
+	CRD (Capital Region District) on Vancouver Island. We used slack to coordinate our group meetings. Often, I was the one initiating
 	discussion about due dates and assignment criteria. The course instructor had his students complete smaller preliminary assignments 
 	to ensure his students didn't fall behind. My group and I never missed a due date while building our solution.
 	</p>
@@ -213,7 +203,6 @@ of my technical skills and soft skills.
 			Back to Table
 		</button>
 	</a>	
-	
 </div>
 </body>
 </html>
