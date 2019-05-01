@@ -11,63 +11,37 @@ the sidebar menu and the iframe for subpages.
     <title>
 		lucianod
 	</title>
-	<link rel="stylesheet" href="subpages\styles\main.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\a.css" type="text/css"/>
+	<link rel="stylesheet" href="subpages\styles\body.css" type="text/css"/>
 	<link rel="stylesheet" href="subpages\styles\div.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\heading.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\p.css" type="text/css"/>
+	<link rel="stylesheet" href="subpages\styles\iframe.css" type="text/css"/>
+	<link rel="stylesheet" href="subpages\styles\a.css" type="text/css"/>
 	<link rel="stylesheet" href="subpages\styles\table.css" type="text/css"/>
   </head>
-<body>
-
-<!-- Flexbox for the layout of the website. Details in index.css -->
-<div class="index_main">
-	
-	<!--Navigation index_menu-->
-	<div class="index_sidebar">
-		<table class="index_menu">
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subpages\home.html" target="main">
-						<h1 class="index_menu">Home</h1>
-					</a>
+<body class="main_page">
+	<div class="menu">
+		<table class="menu">
+			<tr>
+				<td class="menu">
+					<a class="menu" href="subpages\home.html" target="main">Home</a>
 				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subpages\education.html" target="main">
-						<h1 class="index_menu">Education</h1>
-					</a>
+				<td class="menu">
+					<a class="menu" href="subpages\education.html" target="main">Education</a>
 				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subpages\skills.html" target="main">
-						<h1 class="index_menu">Skills</h1>
-					</a>
+				<td class="menu">
+					<a class="menu" href="subpages\skills.html" target="main">Skills</a>
 				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subpages\interests.html" target="main">
-						<h1 class="index_menu">Interests</h1>
-					</a>
+				<td class="menu">
+					<a class="menu" href="subpages\projects.html" target="main">Projects</a>
 				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subpages\projects.html" target="main">
-						<h1 class="index_menu">Projects</h1>
-					</a>
+				<td class="menu">
+					<a class="menu" href="subpages\interests.html" target="main">Interests</a>
 				</td>
-			</tr>
+			<tr>
 		</table>
 	</div>
-	
-	<!-- iframe for the main web page. -->
 	<div class="window">
-		<iframe name="main" src="subpages\home.html">
-		</iframe>
+	    <iframe name="main" src="subpages\home.html">
+        </iframe>
 	</div>
 </div>
 </body>

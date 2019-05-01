@@ -19,14 +19,20 @@ div.border {
 }
 
 /*Styles for index.html*/
-div.index_main {
-	display: flex;
-	height: 100vh;
+div.window {
+    margin: 0px;
+	padding: 0px;
+    height: 94.5%;
+    width: 100%;
+    border-style: none;
 }
 
-div.index_sidebar {
-	background-image: url("images/black.jpg");
-	width: 15%;
+div.menu {
+	margin: 0px;
+	padding: 0xp;
+	height: 5%;
+	border-bottom: solid;
+	background-color: #00688B;
 }
 
 /*Styles for home.html*/
@@ -44,4 +50,5 @@ div.home_box{
 	margin: auto;
 	border-style: solid;
 	text-align: center;
+	border-radius: 30px
 }

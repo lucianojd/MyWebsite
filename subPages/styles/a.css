@@ -10,8 +10,9 @@ a {
 }
 
 /*Styles for index.html*/
-a.index_menu {
+a.menu {
 	text-decoration: none;
+	color: white;
 }
 
 /*Styles for skills.html*/
