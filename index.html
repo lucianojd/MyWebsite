@@ -6,42 +6,58 @@ Description: The main page for lucianod.me. Contains
 the sidebar menu and the iframe for subpages.
 -->
 
-<html>
+<html lang="en">
   <head>
-    <title>
-		lucianod
-	</title>
-	<link rel="stylesheet" href="subpages\styles\body.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\div.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\iframe.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\a.css" type="text/css"/>
-	<link rel="stylesheet" href="subpages\styles\table.css" type="text/css"/>
+    <title>lucianod</title>
+
+	<!--Bootstrap-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="assets/styles/lucianod.css">
+
   </head>
-<body class="main_page">
-	<div class="menu">
-		<table class="menu">
-			<tr>
-				<td class="menu">
-					<a class="menu" href="subpages\home.html" target="main">Home</a>
-				</td>
-				<td class="menu">
-					<a class="menu" href="subpages\education.html" target="main">Education</a>
-				</td>
-				<td class="menu">
-					<a class="menu" href="subpages\skills.html" target="main">Skills</a>
-				</td>
-				<td class="menu">
-					<a class="menu" href="subpages\projects.html" target="main">Projects</a>
-				</td>
-				<td class="menu">
-					<a class="menu" href="subpages\interests.html" target="main">Interests</a>
-				</td>
-			<tr>
-		</table>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#home">lucianod.me</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#education">Education</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#interests">Interests</a></li>
+		</ul>
 	</div>
-	<div class="window">
-	    <iframe name="main" src="subpages\home.html">
-        </iframe>
+</nav>
+
+<div class="container-fluid main_div">
+	<div class="container-fluid body">
+		<div class="col-lg-6">
+			<h1>Luciano De Gianni</h1>
+			<h2>lucdegianni@outlook.com</h2>
+		</div>
+		<div class="col-lg-6">
+			<h3>About Me</h3>
+		</div>
+	</div>
+
+	<div id="education" class="container-fluid body">
+		Home
+	</div>
+	<div id="skills" class="container-fluid body">
+		Home
+	</div>
+	<div id="projects" class="container-fluid body">
+		Home
+	</div>
+	<div id="interests" class="container-fluid body">
+		Home
 	</div>
 </div>
 </body>
