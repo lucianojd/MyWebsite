@@ -36,27 +36,79 @@ the sidebar menu and the iframe for subpages.
 	</div>
 </nav>
 
-<div class="container-fluid main_div">
-	<div class="container-fluid body">
-		<div class="col-lg-6">
-			<h1>Luciano De Gianni</h1>
-			<h2>lucdegianni@outlook.com</h2>
+<div id="home" class="container-fluid main_body">
+
+	<!--Home page.-->
+	<div class="container-fluid section">
+		<div class="col-sm-5 window">
 		</div>
-		<div class="col-lg-6">
-			<h3>About Me</h3>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-5 window">
+			<div class="heading">
+				<h1>Luciano De Gianni</h1>
+			</div>
+			<div>
+				<h3>About Me</h3>
+				<p>
+					I am a third year software engineering student at the University of Victoria.
+					Before attending UVic, I took four semesters at the University of The Fraser Valley.
+					While at the University of The Fraser Valley I played on the men's volleyball team.
+				</p>
+				<p>
+					My site has multiple different sections. Education contains a summary of my current 
+					and completed courses. Skills has a list of different soft and technical skills I have
+					learned while attending UVic. Projects has a link to my GitHub and a description of the
+					projects I have completed. Interests talks more about me and what I like to do besides 
+					coding.
+				</p>
+			</div>
 		</div>
 	</div>
 
-	<div id="education" class="container-fluid body">
+	<!--Education page.-->
+	<div id="education" class="container-fluid section">
+		<div class="col-sm-3 window">
+			<div class="heading">
+				<h1>Education</h1>
+			</div>
+			<p>
+				Here is a list of the classes I am currently taking and have completed.
+			</p>
+			<P>
+				More about classes I enjoy.
+			</P>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-7 class-list">
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="current">Current Classes</a></li>
+					<div id="current" class="tab-pane fade in active">
+						
+					</div>
+				<li><a data-toggle="tab" href="comp-uvic">Completed at UVic</a></li>
+				<div id="current" class="tab-pane fade">
+						
+				</div>
+				<li><a data-toggle="tab" href="comp-ufv">Completed at UFV</a></li>
+				<div id="current" class="tab-pane fade">
+						
+				</div>
+			</ul>
+		</div>
+	</div>
+
+	<!--Skills page.-->
+	<div id="skills" class="container-fluid section">
 		Home
 	</div>
-	<div id="skills" class="container-fluid body">
+
+	<!--Projects page.-->
+	<div id="projects" class="container-fluid section">
 		Home
 	</div>
-	<div id="projects" class="container-fluid body">
-		Home
-	</div>
-	<div id="interests" class="container-fluid body">
+
+	<!--Interests page.-->
+	<div id="interests" class="container-fluid section">
 		Home
 	</div>
 </div>
