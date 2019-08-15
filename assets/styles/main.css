@@ -28,6 +28,13 @@ h1 {
     transition: box-shadow 0.25s;
 }
 
+div.class-list:hover {
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
+}
+
+.tab-content {
+    padding: 10px;
+}
 
 .section {
     height: 100vh;
@@ -44,4 +51,12 @@ h1 {
 
 div.window:hover {
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
 }
