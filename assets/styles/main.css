@@ -12,11 +12,12 @@ h1 {
 }
 
 .heading {
-    background-color: lightslategrey;
+    background-color: #03a6bf;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
 .class-list {
@@ -26,6 +27,7 @@ h1 {
     margin-top: 100px;
     height: 80vh;
     transition: box-shadow 0.25s;
+    overflow: auto;
 }
 
 div.class-list:hover {
@@ -42,12 +44,23 @@ div.class-list:hover {
 
 .window {
     background-color: white;
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: 25px;
     margin-top: 100px;
+    padding: 0px;
     height: 80vh;
     transition: box-shadow 0.25s;
+    overflow: hidden;
 }
+
+.window-content {
+    background-color: white;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 0px;
+    height: 80vh;
+    overflow: auto;
+}
+
 
 div.window:hover {
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
