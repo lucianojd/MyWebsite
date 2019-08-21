@@ -11,37 +11,20 @@ h1 {
     color: black;
 }
 
-.heading {
-    background-color: #03a6bf;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 15px;
+
+th {
     text-align: center;
-    overflow: hidden;
 }
 
-.class-list {
-    background-color: white;
-    border-radius: 15px;
-    padding: 0px;
-    margin-top: 100px;
-    height: 80vh;
-    transition: box-shadow 0.25s;
-    overflow: auto;
-}
-
-div.class-list:hover {
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
-}
-
-.tab-content {
-    padding: 10px;
+td {
+    text-align: center;
 }
 
 .section {
     height: 100vh;
 }
 
+/*Styles for the windows*/
 .window {
     background-color: white;
     border-radius: 25px;
@@ -61,15 +44,34 @@ div.class-list:hover {
     overflow: auto;
 }
 
+.window-heading {
+    background-color: #03a6bf;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+}
 
 div.window:hover {
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
 }
 
-th {
-    text-align: center;
+/*Styles specifically for the list of classes*/
+.class-list {
+    background-color: white;
+    border-radius: 15px;
+    padding: 0px;
+    margin-top: 100px;
+    height: 80vh;
+    transition: box-shadow 0.25s;
+    overflow: auto;
 }
 
-td {
-    text-align: center;
+div.class-list:hover {
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.75);
+}
+
+.tab-content {
+    padding: 10px;
 }
