@@ -3,71 +3,626 @@ File Name: index.html
 Author: Luciano De Gianni    
 Date Modified: Jan.19th, 2018 
 Description: The main page for lucianod.me. Contains
+<<<<<<< HEAD
 the sidebar menu and the iframe for subPages.
 -->
 
-<html>
+<html lang="en">
   <head>
-    <title>
-		lucianod
-	</title>
-	<link rel="stylesheet" href="subPages\styles\main.css" type="text/css"/>
-	<link rel="stylesheet" href="subPages\styles\a.css" type="text/css"/>
-	<link rel="stylesheet" href="subPages\styles\div.css" type="text/css"/>
-	<link rel="stylesheet" href="subPages\styles\heading.css" type="text/css"/>
-	<link rel="stylesheet" href="subPages\styles\p.css" type="text/css"/>
-	<link rel="stylesheet" href="subPages\styles\table.css" type="text/css"/>
+    <title>lucianod</title>
+
+	<!--Bootstrap-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="assets/styles/main.css">
+	<link rel="stylesheet" href="assets/styles/navbar.css">
+
   </head>
 <body>
-
-<!-- Flexbox for the layout of the website. Details in index.css -->
-<div class="index_main">
-	
-	<!--Navigation index_menu-->
-	<div class="index_sidebar">
-		<table class="index_menu">
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subPages\home.html" target="main">
-						<h1 class="index_menu">Home</h1>
-					</a>
-				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subPages\education.html" target="main">
-						<h1 class="index_menu">Education</h1>
-					</a>
-				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subPages\skills.html" target="main">
-						<h1 class="index_menu">Skills</h1>
-					</a>
-				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subPages\interests.html" target="main">
-						<h1 class="index_menu">Interests</h1>
-					</a>
-				</td>
-			</tr>
-			<tr class="index_menu">
-				<td class="index_menu">
-					<a class="index_menu" href="subPages\projects.html" target="main">
-						<h1 class="index_menu">Projects</h1>
-					</a>
-				</td>
-			</tr>
-		</table>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#home">lucianod.me</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#education">Education</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#interests">Interests</a></li>
+		</ul>
 	</div>
-	
-	<!-- iframe for the main web page. -->
-	<div class="window">
-		<iframe name="main" src="subPages\home.html">
-		</iframe>
+</nav>
+
+<div id="home" class="container-fluid main_body">
+
+	<!--Home page.-->
+	<div class="container-fluid section">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-4">
+			<img src="assets/images/MyProfileImage.jpg">
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-4 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>Luciano De Gianni</h1>
+				</div>
+				<div>
+					<h3>About Me</h3>
+					<p>
+						I am a third year software engineering student at the University of Victoria.
+						Before attending UVic, I took four semesters at the University of The Fraser Valley.
+						While at the University of The Fraser Valley I played on the men's volleyball team.
+					</p>
+					<p>
+						My site has multiple different sections. Education contains a summary of my current 
+						and completed courses. Skills has a list of different soft and technical skills I have
+						learned while attending UVic. Projects has a link to my GitHub and a description of the
+						projects I have completed. Interests talks more about me and what I like to do besides 
+						coding.
+					</p>
+					<h3>Contact Info</h3>
+					<h4>
+						<strong>Email:</strong>
+						lucdegianni@outlook.com
+					</h4>
+					<h4>
+						<strong>Phone:</strong>
+						604.352.4965
+					</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+
+	<!--Education page.-->
+	<div id="education" class="container-fluid section">
+		<div class="col-sm-3 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>Education</h1>
+				</div>
+				<p>
+					Here is a list of the classes I am currently taking and have completed.
+				</p>
+				<P>
+					Currently, I am studying at the University of Victoria.
+					I am in the third year of the software engineering program.
+					In 2018 I transferred from the University of the Fraser Valley.
+				</P>
+				<p>
+					At the University of the Fraser Valley, I spent two years in the engineering transfer program.
+					I played on the men's volleyball team while at UFV.
+				</p>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-7 class-list">
+			<ul class="nav nav-tabs">
+				<!--
+				<li class="active"><a data-toggle="tab" href="#current">Current Classes</a></li>
+				-->
+				<li class="active"><a data-toggle="tab" href="#comp-uvic">Completed at UVic</a></li>
+				<li><a data-toggle="tab" href="#comp-ufv">Completed at UFV</a></li>
+			</ul>
+			<div class="tab-content">
+				<!-- Will uncomment when attending classes again
+				<div id="current" class="tab-pane fade in active">
+					
+				</div>
+				-->
+				<div id="comp-uvic" class="tab-pane fade in active">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Course Name</th>
+								<th>Course Code</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Algorithms and Data Structures I</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/CSC/225.html" target="_blank">
+										CSC 225
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Continuous-Time Signals and Systems</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ECE/260.html" target="_blank">
+										ECE 260
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Design II</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ENGR/121.html" target="_blank">
+										ENGR 121
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Design I</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ENGR/112.html" target="_blank">
+										ENGR 112
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Digital Signal Processing I</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ECE/310.html" target="_blank">
+										ECE 310
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Fundamentals of Programming II</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/CSC/115.html" target="_blank">
+										CSC 115
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Human Computer Interaction</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/SENG/310.html" target="_blank">
+										SENG 310
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Computer Architecture</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ECE/255.html" target="_blank">
+										ECE 255
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Principles of Microeconomics and Final Project Evaluation</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ECON/180.html" target="_blank">
+										ECON 180
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Probability and Statistics I</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/STAT/260.html" target="_blank">
+										STAT 260
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Professional Practice</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/ENGR/130.html" target="_blank">
+										ENGR 130
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Logic and Foundations</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/MATH/122.html" target="_blank">
+										MATH 122
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Software Development Methods</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/SENG/265.html" target="_blank">
+										SENG 265
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Software Testing</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/SENG/275.html" target="_blank">
+										SENG 275
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>The Second World War</td>
+								<td>
+									<a href="https://web.uvic.ca/calendar2019-09/CDs/HSTR/115.html" target="_blank">
+										HSTR 115
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="comp-ufv" class="tab-pane fade">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Course Name</th>
+								<th>Course Code</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Academic Writing</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/ENGL.htm" target="_blank">
+										ENGL 105
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Calculus One</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/MATH.htm" target="_blank">
+										MATH 111
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Calculus Two</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/MATH.htm" target="_blank">
+										MATH 112
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Computer-aided Engineering Graphics</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/CourseOutlines/PDFs/ENGR/" target="_blank">
+										ENGR 151
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Electricity and Magnetism</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/PHYS.htm" target="_blank">
+										PHYS 112
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Engineering Physics - Statics & Dynamics</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/CourseOutlines/PDFs/ENGR/" target="_blank">
+										ENGR 113
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Engineering</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/CourseOutlines/PDFs/ENGR/" target="_blank">
+										ENGR 122
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Introduction to Structured Programming</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/COMP.htm" target="_blank">
+										COMP 152
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Linear Algebra for Engineering</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/MATH.htm" target="_blank">
+										MATH 152
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Mechanics</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/PHYS.htm" target="_blank">
+										PHYS 111
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Principles of Chemistry II</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/CHEM.htm" target="_blank">
+										CHEM 114
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Principles of Chemistry I</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/CHEM.htm" target="_blank">
+										CHEM 113
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Professional Report Writing</td>
+								<td>
+									<a href="https://www.ufv.ca/calendar/current/CourseDescriptions/CMNS.htm" target="_blank">
+										CMNS 251
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Skills page.-->
+	<div id="skills" class="container-fluid section">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-4 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>Technical Skills</h1>
+				</div>
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#architecture_of_computers">Architecture of Computers</a>
+							</h4>
+						</div>
+						<div id="architecture_of_computers" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									ECE 255 introduced me to the various components present in a computer. 
+									Memory, input and output devices, instruction cycles, assembly language, buses, and processors were covered in the course. 
+									I'm familiar with various memory types such as ROM, RAM ,Hard Disk Drives, cache and processor registers. 
+									We covered the basics about memory structure and functionality. We covered interrupts and polling with input and output devices. 
+									The instruction cycle covered in the course was: fetch, decode, execute, store, and increment the program counter. 
+									I know how to build subroutines. We were introduced to the system bus; the system bus allows communication between components. 
+									Register usage and the binary versions of instructions were covered. Word length and the advantages and disadvantages of having longer words was taught as well.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#mathematics">Mathematics</a>
+							</h4>
+						</div>
+						<div id="mathematics" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									I've completed one 100 level course for linear algebra and two 100 level courses for calculus. 
+									I have completed a 200 level course for time signals and systems. 
+									Solving matrices, matrix arithmetic, eigenvalues and eigenvectors, transformation matrices, complex numbers, and working with spaces of various dimension described by real or complex valued unit vectors are all concepts I've learned from linear algebra. 
+									Tools I've learned in calculus are derivation, integration and various techniques for performing the operations. 
+									In time signals and systems, I gained the tools to convert a signal into a Fourier series and apply the Fourier transform and Laplace transform. 
+									The course introduced to the basics of sampling and interpolation, amplitude modulation, and modelling systems using differential equations.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#programming_languages">Programming Languages</a>
+							</h4>
+						</div>
+						<div id="programming_languages" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									I am familiar with Java, C++, C, HTML, and CSS. I am also familiar with ARM Assembly language.
+									Specifically, I've programmed the STM32 Cortex™-M0 processor in my Computer Architecture course: ECE 255. 
+									The languages I'm most familiar with are Java and C++; both languages were introduced to me in university. 
+									I've built multiple abstract data types using Java such as stacks, heaps, and binary search trees. 
+									I am confident I could build the same structures in C++. I've programmed a little in C, but I've never taken a class focused on the language. 
+									I learned both HTML and CSS in high-school. Aside from this website, I've never built any major projects using HTML and CSS.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-4 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>Soft Skills</h1>
+				</div>
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#communication">Communication</a>
+							</h4>
+						</div>
+						<div id="communication" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									Communication is one of my best skills. Whether talking in person, through email or on the phone, I communicate effectively. 
+									I've completed multiple group projects while studying. I have worked in a group to design and present a solution to a problem on two occasions. 
+									The first occasion was at UFV. My group and I needed to design a device to collect algae; the algae was to be used as a food source in a remote village. 
+									We communicated regularly and delivered the presentation on time. 
+									The second group project I was a member of was at UVIC. 
+									My group and I needed to develop a method of reducing single occupancy vehicles in the CRD (Capital Region District) on Vancouver Island.
+									We used slack to coordinate our group meetings. Often, I was the one initiating discussion about due dates and assignment criteria. 
+									The course instructor had his students complete smaller preliminary assignments to ensure his students didn't fall behind. 
+									My group and I never missed a due date while building our solution
+								</p>
+							</div>
+						</div>
+					</div><div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#public_speaking">Public Speaking</a>
+							</h4>
+						</div>
+						<div id="public_speaking" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									I'm a confident speaker. I've given multiple presentations throughout university. 
+									Being a part of the volleyball team also helped me become a better speaker. 
+									Volleyball gave me plenty of practice being in front of large crowds. 
+									I have given a total of three oral presentations in my engineering courses. 
+									My English courses required me to give one group presentation; two speeches presented by myself were also required. 
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#teamwork">Teamwork</a>
+							</h4>
+						</div>
+						<div id="teamwork" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>
+									I owe my teamwork abilities to the numerous sports teams I've been a part of. 
+									I played, throughout high-school, both volleyball and basketball. Most recently, I played on The University of The Fraser Valley men's volleyball team. 
+									Emotions can run rampant during a match or even practice; conflict between teammates in stressful situations is extremely common. 
+									However, experiencing tense situations between teammates has allowed me to build excellent teamwork skills. 
+									I am able to compromise, maintain constructive discussions, and act professionally. My teamwork skills have earned me multiple jobs. 
+									I have worked at Costco Wholesale Langley and the City of Surrey South Operations Yard. 
+									Both jobs require you to work effectively with your co-workers in order to complete tasks
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+
+	<!--Projects page.-->
+	<div id="projects" class="container-fluid section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>
+						My Projects
+					</h1>
+				</div>
+				<h3>
+					My GitHub
+				</h3>
+				<p>
+					I host all of my projects on <a href="https://github.com/lucianojd">GitHub</a>. 
+					Here is a short description of the projects I have built so far and a link to their repositories:
+				</p>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Project</th>
+							<th>Description</th>
+							<th>Link</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>CodeBreaker</td>
+						<td>A single player version of the board game Mastermind.</td>
+						<td>
+							<a href="https://github.com/lucianojd/CodeBreaker" target="_blank">
+								Repo
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>My Website</td>
+						<td>Used for hosting information about myself</td>
+						<td>
+							<a href="https://github.com/lucianojd/MyWebsite" target="_blank">
+								Repo
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>TimeCalculator</td>
+						<td>An application for determining the amount of time spent performing an activity.</td>
+						<td>
+							<a href="https://github.com/lucianojd/TimeCalculator" target="_blank">
+								Repo
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+
+	<!--Interests page.-->
+	<div id="interests" class="container-fluid section">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6 window">
+			<div class="window-content">
+				<div class="window-heading">
+					<h1>
+						Interests
+					</h1>
+				</div>
+				<div>
+				<h3>
+					Camping and Hiking
+				</h3>
+				<p>
+					Camping and hiking are my favourite pastimes. I love being outdoors. Studying software engineering, I spend a lot of time inside and in front of a screen. 
+					I love what I am studying, but it would be unhealthy if I didn't take breaks.
+					My favourite hike so far has been the chief. The view is spectacular from the first peak. I'm planning on going back to hike the second and third peaks. 
+					The picture below is of my girlfriend and I at the lower falls in Golden Ears. 
+					We spent the weekend camping at Gold Creek.
+				</p>
+				<h3>
+					Basketball
+				</h3>
+				<p>
+					Although I played volleyball at a post-secondary level. Basketball is by far my favourite sport to both watch and play. 
+					I didn't pursue basketball because I knew I had a far better chance of playing volleyball at a higher level. 
+					Despite how much I enjoy the game, I am not very good. 
+					I loved playing in high-school and now I occasionally get together with a couple friends and play. 
+					I don't watch much of the regular NBA season, but I love watching the playoffs
+				</p>
+				<h3>
+					Travel
+				</h3>
+				<p>
+					My high-school hosted a grade 9 trip to Europe. I got to tour through Belgium, France, Germany, Spain, and Italy. 
+					Italy was my favourite. While in Italy I got to take a gondola ride in Venice, walk inside the dome of the Duomo in Florence, and hike along the Cinqua Terre in Liguria. 
+					In France we got to go up the Eiffel Tower. My favourite part of the trip was the Sagrada Familia in Barcelona, Spain. 
+					I've also been to Edmonton and Calgary for various volleyball tournaments.	
+				</p>
+				<h3>
+					Reading
+				</h3>
+				<p>
+					I really enjoy reading. I've read: The Hunger Games series, The Hobbit, and The Shining alongside some other less known novels. 
+					My favourite author, hands down, is Stephen King. He does an incredible job of creating suspense.
+					My favourite story of his would have to be Rita Hayworth and The Shawshank Redemption. 
+					The movie The Shawshank Redemption is based on that story.
+				</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+>>>>>>> restructure
 	</div>
 </div>
 </body>

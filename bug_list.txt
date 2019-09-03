@@ -1,0 +1,7 @@
+Unresolved
+
+
+Resovled:
+(#1, 22 June 2019) Main window was not flush with the navigation bar:
+Margin underneath the navigation bar was not 0.
+
