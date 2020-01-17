@@ -2,15 +2,33 @@
 <html lang="en">
 	<head>
 		<title>lucianod</title>
-
-		<!--Bootstrap-->
+		<link rel="shortcut icon" src="favicon.ico">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		<!--JQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+		<!--Global scripts-->
+		<script src="assets/scripts/global_scripts.js"></script>
+		<script src="assets/scripts/index_scripts.js"></script>
+
+		<!--Styles-->
+		<link rel="stylesheet" href="assets/styles/index_styles.css">
+		<link rel="stylesheet" href="assets/styles/menu_styles.css">
+		<link rel="stylesheet" href="assets/styles/page_styles.css">
+
 	</head>
 	<body>
-
+		<section id="menu-container" class="menu">
+			<script>
+				load_menu();
+			</script>
+		</section>
+		<section id="page-container" class="page">
+			<script>
+				determine_page_to_load("#page-container");	
+			</script>
+		</section>
+		<script src="assets/scripts/index_scripts.js"></script>
 	</body>
 </html>
