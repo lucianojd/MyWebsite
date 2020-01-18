@@ -5,19 +5,19 @@ body {
 }
 
 #menu-container {
+    background-image: url("/assets/styles/images/black.jpg");
     display: flex;
-    background-image: url('/assets/styles/images/black.jpg');
     align-items: center;
     height: 100vh;
     width: 10%;
+    min-width: 180px;
     overflow: hidden;
 }
 
 #page-container {
+    background-image: url("/assets/styles/images/white.jpg");
     height: 100vh;
-    width: 88%;
-    padding-left: 1%;
-    padding-right: 1%;
+    width: 90%;
     overflow-y: auto;
 }
 
