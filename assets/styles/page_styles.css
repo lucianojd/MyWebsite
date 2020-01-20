@@ -1,16 +1,16 @@
 /*All pages*/
 .page p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
 }
 
-/*home_page*/
-section.home_page {
+section.home_page, section.education_page {
     display: flex;
     flex-direction: row;
     margin: 2%;
 }
 
+/*home_page*/
 section.information {
     display: flex;
     flex-direction: column;
@@ -51,4 +51,9 @@ section.contact {
 
 .about_me p, .about_me h3{
     margin: 10px;
+}
+
+/*Education page.*/
+.education_page section {
+    width: 50%;
 }

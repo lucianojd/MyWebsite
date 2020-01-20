@@ -4,6 +4,13 @@ body {
     padding: 0px;
 }
 
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
 #menu-container {
     background-image: url("/assets/styles/images/black.jpg");
     display: flex;
