@@ -1,10 +1,11 @@
 function change_container_contents(id, page_num) {
+    var path = "assets/pages/";
     var page_list = [
-        "assets/html_pages/home_page.html",
-        "assets/html_pages/education_page.html",
-        "assets/html_pages/skills_page.html",
-        "assets/html_pages/projects_page.html",
-        "assets/html_pages/menu.html"
+        path + "home.html",
+        path + "education.html",
+        path + "skills.html",
+        path + "projects.html",
+        path + "menu.html"
     ];
     $(id).load(page_list[page_num]);
     // Don't save the page if it's the menu.
