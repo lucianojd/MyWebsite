@@ -7,7 +7,6 @@
 section.home_page, section.education_page {
     display: flex;
     flex-direction: row;
-    margin: 2%;
 }
 
 /*home_page*/
@@ -18,7 +17,7 @@ section.information {
 
 .home_page img {
     width: 25%;
-    margin: auto;
+    margin: 2%;
     border-color: black;
     border-style: solid;
     border-radius: 10px;
@@ -26,7 +25,7 @@ section.information {
 
 .information section {
     width: 75%;
-    margin: auto;
+    margin: 2%;
     border-color: black;
     border-style: solid;
     border-radius: 10px;
@@ -41,19 +40,40 @@ section.contact {
     overflow: hidden;
 }
 
-.contact h1 {
-    font-size: 2em;
-}
-
-.contact h2 {
-    font-size: 1.5em;
-}
-
-.about_me p, .about_me h3{
-    margin: 10px;
+.about_me h3, .about_me p {
+    margin: 5px;
 }
 
 /*Education page.*/
 .education_page section {
     width: 50%;
+}
+
+section.info {
+    margin: 2%;
+}
+
+section.edu_table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    margin: 2%
+}
+
+.edu_table table {
+    height: 70%;
+}
+
+.edu_table td {
+    text-align: left;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 2px;
+}
+
+section.table_controls {
+    display: flex;
+    flex-direction: column;
 }
