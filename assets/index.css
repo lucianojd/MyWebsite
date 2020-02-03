@@ -17,6 +17,7 @@ h2 {
     background-image: url("/assets/images/black.jpg");
     display: flex;
     align-items: center;
+    align-content: center;
     height: 100vh;
     width: 10%;
     min-width: 180px;
@@ -25,7 +26,7 @@ h2 {
 }
 
 #page-container {
-    background-color: rgb(39, 167, 209);
+    background-image: url("/assets/images/white.jpg");
     height: 100vh;
     width: 90%;
     overflow-y: auto;
