@@ -1,7 +1,9 @@
-function build_education_table(id: string, path_num: number): void {
+function import_table(id: string, path_num: number): void {
+    var path: string = "assets/sub-pages/education_page/json/";
+    
     var document_paths: string[] = [
-        "assets/json/uvic_courses.json",
-        "assets/json/ufv_courses.json"
+        path + "uvic_courses.json",
+        path + "ufv_courses.json"
     ]
     
     var courses = [];
@@ -40,21 +42,20 @@ function build_education_table(id: string, path_num: number): void {
             content += temp_string;
         }
 
-        //Save page.
-        localStorage.setItem("currentEducationTable", path_num.toString());
-
         //Insert html into table.
         $(id).html(content);
+
+        //Save page.
+        localStorage.setItem("currentEducationTable", path_num.toString());
     })
 }
 
-function determine_table_to_load(id: string): void {
+function load_table(id: string): void {
     var table_num: number = +localStorage.getItem("currentEducationTable");
 
     if(!table_num) {
-        build_education_table(id, 0);
-        return;
+        table_num = 0;
     }
 
-    build_education_table(id, table_num);
+    import_table(id, table_num);
 }

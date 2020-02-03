@@ -1,7 +1,8 @@
-function build_education_table(id, path_num) {
+function import_table(id, path_num) {
+    var path = "assets/sub-pages/education_page/json/";
     var document_paths = [
-        "assets/json/uvic_courses.json",
-        "assets/json/ufv_courses.json"
+        path + "uvic_courses.json",
+        path + "ufv_courses.json"
     ];
     var courses = [];
     var content = "";
@@ -32,17 +33,16 @@ function build_education_table(id, path_num) {
             temp_string += "</tr>";
             content += temp_string;
         }
-        //Save page.
-        localStorage.setItem("currentEducationTable", path_num.toString());
         //Insert html into table.
         $(id).html(content);
+        //Save page.
+        localStorage.setItem("currentEducationTable", path_num.toString());
     });
 }
-function determine_table_to_load(id) {
+function load_table(id) {
     var table_num = +localStorage.getItem("currentEducationTable");
     if (!table_num) {
-        build_education_table(id, 0);
-        return;
+        table_num = 0;
     }
-    build_education_table(id, table_num);
+    import_table(id, table_num);
 }

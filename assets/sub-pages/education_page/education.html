@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>education_page</title>
-        <script src="\assets\pages\scripts\education.js"></script>
     </head>
     <body>
         <section class="education_page">
@@ -37,17 +36,17 @@
                         </tr>
                     </thead>
                     <tbody id="edu_table">
-                        <script>determine_table_to_load("#edu_table")</script>
+                        <script>load_table("#edu_table")</script>
                         <!--Filled using buidl_education_table-->
                     </tbody>
                 </table>
             </section>
             <section class="table_controls">
                 <h3>Select a table:</h3>
-                <button onclick="build_education_table('#edu_table', 0)">
+                <button onclick="import_table('#edu_table', 0)">
                   Completed at UVic
                 </button>
-                <button onclick="build_education_table('#edu_table', 1)">
+                <button onclick="import_table('#edu_table', 1)">
                     Completed at UFV
                 </button>
             </section>
