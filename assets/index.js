@@ -1,28 +1,39 @@
-function change_container_contents(id, page_num) {
-    var path = "assets/pages/";
-    var page_list = [
-        path + "home.html",
-        path + "education.html",
-        path + "skills.html",
-        path + "projects.html",
-        path + "menu.html"
-    ];
-    $(id).load(page_list[page_num]);
+//Global variables.
+var container = {
+    menu: "#menu-container",
+    page: "#page-container"
+};
+var pageList = {
+    "home": "assets/sub-pages/home_page/home.html",
+    "education": "assets/sub-pages/education_page/education.html",
+    "skills": "assets/sub-pages/skills_page/skills.html",
+    "interests": "assets/sub-pages/interests_page/interests.html",
+    "projects": "assets/sub-pages/projects_page/projects.html",
+    "menu": "assets/menu-container/menu.html"
+};
+//Global functions.
+function import_page(id, page) {
+    //Load the page.
+    $(id).load(pageList[page]);
     // Don't save the page if it's the menu.
-    if (page_num == 4) {
+    if (page == "menu") {
         return;
     }
-    localStorage.setItem("currentPage", page_num.toString());
+    localStorage.setItem("currentPage", page);
 }
-function determine_page_to_load(id) {
-    var page_num = +localStorage.getItem("currentPage");
+function load_page() {
+    var page = localStorage.getItem("currentPage");
     // Set the current page to the home page if no page is set.
-    if (!page_num) {
-        change_container_contents(id, 0);
-        return;
+    if (!page) {
+        page = "home";
     }
-    change_container_contents(id, page_num);
+    import_page(container.page, page);
 }
 function load_menu() {
-    change_container_contents("#menu-container", 4);
+    import_page(container.menu, "menu");
+}
+function check_buttons() {
+    $("button").click(function () {
+        import_page(container.page, this.id);
+    });
 }

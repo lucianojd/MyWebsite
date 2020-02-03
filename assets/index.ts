@@ -1,34 +1,49 @@
-function change_container_contents(id: string, page_num: number): void {
-    var path: string ="assets/pages/";
-    
-    var page_list: string[] = [
-        path + "home.html",
-        path + "education.html",
-        path + "skills.html",
-        path + "projects.html",
-        path + "menu.html"
-    ];
-
-    $(id).load(page_list[page_num]);
-
-    // Don't save the page if it's the menu.
-    if(page_num == 4) { return; }
-
-    localStorage.setItem("currentPage", page_num.toString());
+//Global variables.
+var container = {
+    menu:"#menu-container", 
+    page:"#page-container"
 }
 
-function determine_page_to_load(id: string): void {
-    let page_num: number = +localStorage.getItem("currentPage");
+var pageList = {
+    "home":"assets/sub-pages/home_page/home.html",
+    "education":"assets/sub-pages/education_page/education.html",
+    "skills":"assets/sub-pages/skills_page/skills.html",
+    "interests":"assets/sub-pages/interests_page/interests.html",
+    "projects":"assets/sub-pages/projects_page/projects.html",
+    "menu":"assets/menu-container/menu.html"
+}
+
+//Global functions.
+function import_page(id:string, page:string): void {
+
+    //Load the page.
+    $(id).load(pageList[page]);
+
+    // Don't save the page if it's the menu.
+    if(page == "menu") { 
+        return; 
+    }
+
+    localStorage.setItem("currentPage", page);
+}
+
+function load_page(): void {
+    var page: string = localStorage.getItem("currentPage");
 
     // Set the current page to the home page if no page is set.
-    if(!page_num) {
-        change_container_contents(id, 0);
-        return;
+    if(!page) { 
+        page = "home";
     }
     
-    change_container_contents(id, page_num);
+    import_page(container.page, page);
 }
 
 function load_menu(): void {
-    change_container_contents("#menu-container", 4);
+    import_page(container.menu, "menu");
+}
+
+function check_buttons(): void {
+    $("button").click(function () {
+        import_page(container.page, this.id);
+    })
 }
