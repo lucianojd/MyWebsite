@@ -1,0 +1,32 @@
+.menu button {
+    background: solid;
+    background-color: rgb(4, 138, 143);
+    border-radius: 5px;
+    border-style: none;
+    outline-style: none;
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-family: Arial;
+    font-size: 30px;
+}
+
+.menu button:hover {
+    cursor: pointer;
+    box-shadow: black;
+}
+
+.menu table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.menu td {
+    margin: auto;
+}
+
+.menu tr {
+    margin: 5px;
+}
