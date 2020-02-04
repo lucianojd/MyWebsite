@@ -11,11 +11,14 @@
     color: black;
     font-family: Arial;
     font-size: 30px;
+    transition: box-shadow 0.25s;
 }
 
 .menu button:hover {
     cursor: pointer;
-    box-shadow: black;
+    box-shadow: 3px 3px 3px black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .menu table {
