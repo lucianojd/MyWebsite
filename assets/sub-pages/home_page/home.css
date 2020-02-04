@@ -1,0 +1,17 @@
+#profile_img {
+    height: 90vh;
+    margin: 3vh;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+#contact {
+    margin: 3vh;
+    width: 50%;
+}
+
+#about_me {
+    margin: 3vh;
+    width: 50vw;
+}
