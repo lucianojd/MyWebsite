@@ -4,8 +4,8 @@
         <title>education_page</title>
     </head>
     <body>
-        <section class="education_page">
-            <section class="info">
+        <section class="window">
+            <section id="info">
                 <h1>Education</h1>
             <p>
                 Here is a list of the classes I am currently taking and have completed.
@@ -19,37 +19,38 @@
                 At the University of the Fraser Valley, I spent two years in the engineering transfer program.
                 I played on the men's volleyball team while at UFV.
             </p>
+            <h3>Select a table:</h3>
+            <button id="uvic">
+              Completed at UVic
+            </button>
+            <button id="ufv">
+                Completed at UFV
+            </button>
             </section>
-            <section class="edu_table">
-                <table>
+            <section id="education_table">
+                <h2 id="education_table_title"></h2>
+                <table class="table-default">
                     <thead>
                         <tr>
-                            <th>
+                            <th id="course_code">
                                 Course Code
                             </th>
-                            <th>
+                            <th id="course_name">
                                 Course Name
-                            </th>
-                            <th>
-                                More Info
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="edu_table">
-                        <script>load_table("#edu_table")</script>
-                        <!--Filled using buidl_education_table-->
+                    <tbody id="education_table_body">
+                        <script>
+                            //Located in education.js
+                            load_table_education();
+                        </script>
                     </tbody>
                 </table>
             </section>
-            <section class="table_controls">
-                <h3>Select a table:</h3>
-                <button onclick="import_table('#edu_table', 0)">
-                  Completed at UVic
-                </button>
-                <button onclick="import_table('#edu_table', 1)">
-                    Completed at UFV
-                </button>
-            </section>
         </section>
+        <script>
+            check_table_buttons();
+        </script>
     </body>
 </html>
