@@ -1,0 +1,32 @@
+#info {
+    margin: 3vh;
+    width: 40%;
+}
+
+#info button {
+    width: 15vw;
+    height: -10vh;
+    font-size: 20px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+#course_code {
+    width: 20%;
+}
+
+#course_name {
+    width: 80%;
+}
+
+#education_table {
+    margin: 3vh;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#education_table_body tr:hover {
+    background-color: rgb(163, 161, 161);
+}
