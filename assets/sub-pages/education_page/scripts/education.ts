@@ -1,16 +1,40 @@
-function import_table(id: string, path_num: number): void {
+function load_title_education(id: string) {
+    var container = "#education_table_title";
+    var title_template = "Courses completed at: ";
+
+    switch(id) {
+        case "ufv":
+            $(container).html(title_template + "UFV");
+            console.log(title_template + "UFV");
+        break;
+
+        case "uvic":
+            $(container).html(title_template + "UVic");
+            console.log(title_template + "UVic");
+        break;
+
+        default:
+        break;
+    }
+}
+
+function import_table(table:string): void {
     var path: string = "assets/sub-pages/education_page/json/";
+    var id: string = "#education_table_body";
     
-    var document_paths: string[] = [
-        path + "uvic_courses.json",
-        path + "ufv_courses.json"
-    ]
+    var document_paths = {
+        "uvic":path + "uvic_courses.json",
+        "ufv":path + "ufv_courses.json"
+    }
     
     var courses = [];
     var content: string = "";
 
+    //Set title.
+    load_title_education(table);
+
     //Read in JSON.
-    $.getJSON(document_paths[path_num], function(data){
+    $.getJSON(document_paths[table], function(data){
         courses = data.courses
 
         //Sort alphabetically.
@@ -34,9 +58,8 @@ function import_table(id: string, path_num: number): void {
             var temp_string: string = "";
 
             temp_string += "<tr>";
-            temp_string += "<td>"+courses[i].course_code+"</td>";
+            temp_string += "<td><a target=\"_blank\" href=\"" + courses[i].url + "\">" + courses[i].course_code + "</a></td>";
             temp_string += "<td>" + courses[i].course_name + "</td>";
-            temp_string += "<td><a target=\"_blank\" href=\"" + courses[i].url + "\">Info<a></td>";
             temp_string += "</tr>"
 
             content += temp_string;
@@ -46,16 +69,22 @@ function import_table(id: string, path_num: number): void {
         $(id).html(content);
 
         //Save page.
-        localStorage.setItem("currentEducationTable", path_num.toString());
+        localStorage.setItem("currentEducationTable", table);
     })
 }
 
-function load_table(id: string): void {
-    var table_num: number = +localStorage.getItem("currentEducationTable");
+function load_table_education(): void {
+    var tmpTable:string = localStorage.getItem("currentEducationTable");
 
-    if(!table_num) {
-        table_num = 0;
+    if(!tmpTable) {
+        tmpTable = "uvic";
     }
 
-    import_table(id, table_num);
+    import_table(tmpTable);
+}
+
+function check_table_buttons(){
+    $("button").click(function () {
+        import_table(this.id);
+    })
 }
