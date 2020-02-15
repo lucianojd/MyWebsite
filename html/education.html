@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>education_page</title>
+        <title>education</title>
+        <link rel="stylesheet" href="/css/education.css">
+        <script type="module">
+            import { watchDropDown } from "/js/main.js";
+            watchDropDown();
+        </script>
     </head>
     <body>
         <section class="window">
             <section id="info">
                 <h1>Education</h1>
-            <p>
-                Here is a list of the classes I am currently taking and have completed.
-            </p>
             <P>
                 Currently, I am studying at the University of Victoria.
                 I am in the third year of the software engineering program.
@@ -19,19 +21,14 @@
                 At the University of the Fraser Valley, I spent two years in the engineering transfer program.
                 I played on the men's volleyball team while at UFV.
             </p>
-            <h3>Select a table:</h3>
-            <button id="uvic">
-              Completed at UVic
-            </button>
-            <button id="ufv">
-                Completed at UFV
-            </button>
+            <p>View course completed at: 
+            <select>
+                <option>UVic</option>
+                <option>UFV</option>
+            </select>
+            </p>
             </section>
             <section id="education_table">
-                <select>
-                    <option>Completed at UFV</option>
-                    <option>Completed at UVic</option>
-                </select>
                 <table class="table-default">
                     <thead>
                         <tr>
