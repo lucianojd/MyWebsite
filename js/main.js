@@ -4,11 +4,6 @@ var container = {
     menu: "#menu-container",
     page: "#page-container"
 };
-//Names of localStorage variables.
-var lclStrVar = {
-    currPg: "currentPage",
-    currEduTbl: "currentEducationTable"
-};
 //Create pages.
 var pageList = new Map();
 pageList.set("education", new Page("education", "/html/education.html", new Map()));
@@ -25,26 +20,54 @@ pageList.get("skills").addDocument("technical", "/resources/data/technical_skill
 //Global functions.
 export function init() {
     //Load menu.
-    loadPage(container.menu, "menu");
+    loadMenu();
     //Load home page if first visit.
-    if (!sessionStorage.getItem(lclStrVar.currPg)) {
-        loadPage(container.page, "home");
-        sessionStorage.setItem(lclStrVar.currPg, "home");
-    }
-    else {
-        loadPage(container.page, sessionStorage.getItem(lclStrVar.currPg));
-    }
+    loadPage(container.page, null);
 }
 export function checkButtons() {
     $("button").click(function () {
-        loadPage(container.page, this.id);
-        sessionStorage.setItem(lclStrVar.currPg, this.id);
+        switch (this.id) {
+            case "education":
+            case "home":
+            case "interests":
+            case "projects":
+            case "skills":
+                loadPage(container.page, this.id);
+                break;
+            default:
+                console.log("\"" + this.id + "\" is an unknown button.");
+                break;
+        }
+    });
+}
+export function watchDropDown(ctrlLocation) {
+    $("select").change(function () {
+        console.log($(this).val());
     });
 }
 function loadPage(containerId, page) {
-    if (!pageList.has(page)) {
+    if (page && !pageList.has(page)) {
         return false;
     }
+    var sessionStrVar = "currentPage";
+    var defaultPage = "home";
+    var currPg = sessionStorage.getItem(sessionStrVar);
+    if (!page && !currPg) {
+        $(containerId).load(pageList.get(defaultPage).getURL());
+        sessionStorage.setItem(sessionStrVar, defaultPage);
+        return true;
+    }
+    if (!page) {
+        $(containerId).load(pageList.get(currPg).getURL());
+        return true;
+    }
     $(containerId).load(pageList.get(page).getURL());
+    sessionStorage.setItem(sessionStrVar, page);
     return true;
+}
+function loadMenu() {
+    if (!pageList.get("menu")) {
+        return false;
+    }
+    $(container.menu).load(pageList.get("menu").getURL());
 }
