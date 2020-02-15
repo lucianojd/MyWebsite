@@ -36,7 +36,7 @@ button:hover {
 }
 
 #menu-container {
-    background-image: url("/assets/images/black.jpg");
+    background-image: url("/resources/images/black.jpg");
     display: flex;
     align-items: center;
     align-content: center;
@@ -48,7 +48,7 @@ button:hover {
 }
 
 #page-container {
-    background-image: url("/assets/images/white.jpg");
+    background-image: url("/resources/images/white.jpg");
     height: 100vh;
     width: 90%;
     overflow-y: auto;

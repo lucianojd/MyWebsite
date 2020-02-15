@@ -9,28 +9,19 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<!--Scripts-->
-		<script src="/assets/index.js"></script>
-		<script src="/assets/sub-pages/education_page/scripts/education.js"></script>
-
+		<script type="module" src="/js/main.js"></script>
+	
 		<!--Styles-->
-		<link rel="stylesheet" href="assets/index.css">
-		<link rel="stylesheet" href="assets/menu-container/menu.css">
-		<link rel="stylesheet" href="assets/sub-pages/home_page/home.css">
-		<link rel="stylesheet" href="assets/sub-pages/education_page/education.css">
-
-
-
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/home.css">
+		<link rel="stylesheet" href="/css/menu.css">
 	</head>
 	<body>
-		<section id="menu-container" class="menu">
-			<script>
-				load_menu();
-			</script>
-		</section>
-		<section id="page-container" class="page">
-			<script>
-				load_page();	
-			</script>
-		</section>
+		<section id="menu-container" class="menu"></section>
+		<section id="page-container" class="page"></section>
+		<script type="module">
+			import { init } from "/js/main.js";
+			init();
+		</script>
 	</body>
 </html>
