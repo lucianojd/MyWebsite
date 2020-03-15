@@ -1,73 +1,41 @@
-import { Page } from "./Page.js";
-//Create section names for loading pages.
-var container = {
-    menu: "#menu-container",
-    page: "#page-container"
-};
-//Create pages.
-var pageList = new Map();
-pageList.set("education", new Page("education", "/html/education.html", new Map()));
-pageList.set("home", new Page("home", "/html/home.html", new Map()));
-pageList.set("interests", new Page("interests", "/html/interests.html", new Map()));
-pageList.set("menu", new Page("menu", "/html/menu.html", new Map()));
-pageList.set("projects", new Page("projects", "/html/projects.html", new Map()));
-pageList.set("skills", new Page("skills", "/html/skills.html", new Map()));
-//Add documents to pages.
-pageList.get("education").addDocument("ufv", "/resources/data/ufv_courses.json");
-pageList.get("education").addDocument("uvic", "/resources/data/uvic_courses.json");
-pageList.get("skills").addDocument("soft", "/resources/data/soft_skills.txt");
-pageList.get("skills").addDocument("technical", "/resources/data/technical_skills.txt");
-//Global functions.
-export function init() {
-    //Load menu.
-    loadMenu();
-    //Load home page if first visit.
-    loadPage(container.page, null);
-}
-export function checkButtons() {
-    $("button").click(function () {
-        switch (this.id) {
-            case "education":
-            case "home":
-            case "interests":
-            case "projects":
-            case "skills":
-                loadPage(container.page, this.id);
-                break;
-            default:
-                console.log("\"" + this.id + "\" is an unknown button.");
-                break;
-        }
+// Set up page.
+$(document).ready(function () {
+    var trgts = {
+        menu: "#menu-container",
+        page: "#page-container"
+    };
+    var sesStrVar = {
+        currPg: "currentPage"
+    };
+    var htmlPath = "html/";
+    // Load menu and add button functionality.
+    $(trgts.menu).load("html/menu.html");
+    // Setup menu buttons.
+    $(trgts.menu).on("click", "button", function () {
+        var URL = htmlPath + this.id + ".html";
+        // Setup the button to load the page.
+        $(trgts.page).load(URL);
+        sessionStorage.setItem(sesStrVar.currPg, this.id);
+        // Attach a page loading function to the button.
+        pgLoadFuncSelector(this.id);
     });
-}
-export function watchDropDown(ctrlLocation) {
-    $("select").change(function () {
-        console.log($(this).val());
-    });
-}
-function loadPage(containerId, page) {
-    if (page && !pageList.has(page)) {
-        return false;
-    }
-    var sessionStrVar = "currentPage";
+    //  Load the last page open.
     var defaultPage = "home";
-    var currPg = sessionStorage.getItem(sessionStrVar);
-    if (!page && !currPg) {
-        $(containerId).load(pageList.get(defaultPage).getURL());
-        sessionStorage.setItem(sessionStrVar, defaultPage);
-        return true;
+    if (!sessionStorage.getItem(sesStrVar.currPg)) {
+        sessionStorage.setItem(sesStrVar.currPg, defaultPage);
     }
-    if (!page) {
-        $(containerId).load(pageList.get(currPg).getURL());
-        return true;
+    var currentPage = sessionStorage.getItem(sesStrVar.currPg);
+    $(trgts.page).load(htmlPath + currentPage + ".html");
+});
+// Used to grab a function to execute when loading a page.
+function pgLoadFuncSelector(pgName) {
+    switch (pgName) {
+        case "home":
+            break;
+        case "education":
+            break;
+        default:
+            // Do nothing.
+            break;
     }
-    $(containerId).load(pageList.get(page).getURL());
-    sessionStorage.setItem(sessionStrVar, page);
-    return true;
-}
-function loadMenu() {
-    if (!pageList.get("menu")) {
-        return false;
-    }
-    $(container.menu).load(pageList.get("menu").getURL());
 }
