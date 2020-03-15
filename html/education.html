@@ -3,14 +3,10 @@
     <head>
         <title>education</title>
         <link rel="stylesheet" href="/css/education.css">
-        <script type="module">
-            import { watchDropDown } from "/js/main.js";
-            watchDropDown();
-        </script>
     </head>
     <body>
         <section class="window">
-            <section id="info">
+            <section class="info">
                 <h1>Education</h1>
             <P>
                 Currently, I am studying at the University of Victoria.
@@ -21,28 +17,30 @@
                 At the University of the Fraser Valley, I spent two years in the engineering transfer program.
                 I played on the men's volleyball team while at UFV.
             </p>
-            <p>View course completed at: 
-            <select>
-                <option>UVic</option>
-                <option>UFV</option>
-            </select>
+            <p>
+                <strong>
+                    View course completed at: 
+                </strong> 
+                <select id="education_select">
+                    <option>UVic</option>
+                    <option>UFV</option>
+                </select>
             </p>
             </section>
-            <section id="education_table">
+            <section class="education_table">
                 <table class="table-default">
                     <thead>
                         <tr>
-                            <th id="course_code">
+                            <th class="course_code">
                                 Course Code
                             </th>
-                            <th id="course_name">
+                            <th class="course_name">
                                 Course Name
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="education_table_body">
-                        <script>
-                            //Located in education.js
+                    <tbody id="course_table">
+                        <script type="module">
                         </script>
                     </tbody>
                 </table>
