@@ -1,3 +1,5 @@
+import { loadEducationTable } from "./utils"
+
 // Set up page.
 $(document).ready(function () {
     var trgts = {
@@ -23,7 +25,7 @@ $(document).ready(function () {
         sessionStorage.setItem(sesStrVar.currPg, this.id);
 
         // Attach a page loading function to the button.
-        pgLoadFuncSelector(this.id);
+        pageLoadFunctionSelector(this.id);
     });
 
     //  Load the last page open.
@@ -38,16 +40,51 @@ $(document).ready(function () {
 })
 
 // Used to grab a function to execute when loading a page.
-function pgLoadFuncSelector(pgName: string): void {
+function pageLoadFunctionSelector(pgName: string): void {
     switch(pgName) {
-        case "home":
+        case "education":
+            loadEducation()
             break;
 
-        case "education":
+        case "home":
+            loadHome()
+            break;
+
+        case "interests":
+            loadInterests()
+            break;
+
+        case "projects":
+            loadProjects()
+            break;
+
+        case "skills":
+            loadSkills()
             break;
 
         default:
             // Do nothing.
             break;
     }
+}
+
+// Functions attach functions to controls specific to each page.
+function loadEducation(): void {
+
+}
+
+function loadHome(): void {
+
+}
+
+function loadInterests(): void {
+
+}
+
+function loadProjects(): void {
+
+}
+
+function loadSkills(): void {
+
 }
