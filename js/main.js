@@ -17,7 +17,7 @@ $(document).ready(function () {
         $(trgts.page).load(URL);
         sessionStorage.setItem(sesStrVar.currPg, this.id);
         // Attach a page loading function to the button.
-        pgLoadFuncSelector(this.id);
+        pageLoadFunctionSelector(this.id);
     });
     //  Load the last page open.
     var defaultPage = "home";
@@ -28,14 +28,35 @@ $(document).ready(function () {
     $(trgts.page).load(htmlPath + currentPage + ".html");
 });
 // Used to grab a function to execute when loading a page.
-function pgLoadFuncSelector(pgName) {
+function pageLoadFunctionSelector(pgName) {
     switch (pgName) {
-        case "home":
-            break;
         case "education":
+            loadEducation();
+            break;
+        case "home":
+            loadHome();
+            break;
+        case "interests":
+            loadInterests();
+            break;
+        case "projects":
+            loadProjects();
+            break;
+        case "skills":
+            loadSkills();
             break;
         default:
             // Do nothing.
             break;
     }
+}
+function loadEducation() {
+}
+function loadHome() {
+}
+function loadInterests() {
+}
+function loadProjects() {
+}
+function loadSkills() {
 }
