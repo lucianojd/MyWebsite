@@ -1,17 +1,24 @@
 #profile_img {
-    height: 90vh;
-    margin: 3vh;
+    height: 80vh;
+    margin: 50px;
     border-color: black;
     border-style: solid;
     border-radius: 15px;
 }
 
 #contact {
-    margin: 3vh;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
     width: 50%;
 }
 
 #about_me {
-    margin: 3vh;
-    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+p {
+    width: 70%;
 }
