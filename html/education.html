@@ -18,16 +18,17 @@
                 I played on the men's volleyball team while at UFV.
             </p>
             <p>
-                <strong>
-                    View course completed at: 
-                </strong> 
+                <label for="education_select">View course completed at:</strong> 
                 <select id="education_select">
-                    <option>UVic</option>
-                    <option>UFV</option>
+                    <option value="uvic">UVic</option>
+                    <option value="ufv">UFV</option>
                 </select>
             </p>
             </section>
             <section class="education_table">
+                <h1 id="education_title">
+                    <!--This is dyncamically updated-->
+                </h1>
                 <table class="table-default">
                     <thead>
                         <tr>
@@ -39,12 +40,15 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="course_table">
-                        <script type="module">
-                        </script>
+                    <tbody id="education_table">
                     </tbody>
                 </table>
             </section>
         </section>
     </body>
+    <script type="module">
+        import { handleSelectChange, handleSelectOnReady } from "/js/main.js"
+        handleSelectOnReady("#education_select", "#education_title", "#education_table");
+        $("select").change( function (){ handleSelectChange(this, "#education_title", "#education_table") });
+    </script>
 </html>

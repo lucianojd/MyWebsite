@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>skills</title>
+    </head>
+    <body>
+        <section class="window">
+            <section class="info">
+                <h1>Experience</h1>
+                <p>
+                    Through school and through work I have learned a wide range
+                    of skills. 
+                </p>
+                <label for="experience_select">Current table:</label>
+                <select id="experience_select">
+                    <option value="soft-skills">Soft Skills</option>
+                    <option value="technical-skills">Technical Skills</option>
+                    <option value="work-experience">Work Experience</option>
+                </select>
+            </section>
+            <section class="experience">
+                <h1 id="experience_title"></h1>
+                <div id="exeprience_list">
+                    <script type="module">
+                        import { createExperienceList } from "/js/utils.js"
+                        
+                        // Check session storage.
+                        var currentList = sessionStorage.getItem("currentExperienceList");
+
+                        // If no list is loaded load technical skills.
+                        if(!currentList) {
+                            currentList = "Technical Skills";
+                            sessionStorage.setItem("currentExperienceList", currentList);
+                        }
+
+                        // Set title.
+                        $("#experience_title").text(currentList.toString());
+
+                        // Adjust select value.
+                        $("#experience_select").val(currentList);
+
+                        // Load last list selected.
+                        createExperienceList(currentList, function(htmlString){
+                            $("#experience_list").html(htmlString);
+                        });
+                    </script>
+                </div>
+            </section>
+        </section>
+    </body>
+    <script type="module">
+        import { handleSelectChange, handleSelectOnReady } from "/js/main.js"
+        handleSelectOnReady("#experience_select", "#experience_title", "#experience_table");
+        $("select").change( function (){ handleSelectChange(this, "#experience_title", "#experience_table") });
+    </script>
+</html>
