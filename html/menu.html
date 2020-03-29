@@ -22,8 +22,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <button id="skills">
-                            Skills
+                        <button id="experience">
+                            Experience
                         </button>
                     </td>
                 </tr>
@@ -44,4 +44,8 @@
             </tbody>
         </table>
     </body>
+    <script type="module">
+        import { buttonHandler } from "/js/main.js"
+        $("button").click(function (){ buttonHandler(this); });
+    </script>
 </html>
