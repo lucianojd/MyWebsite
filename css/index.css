@@ -87,6 +87,7 @@ section.window {
     margin: auto;
     display: flex;
     flex-direction: row;
+    height: 90%;
 }
 
 section.info {
@@ -106,6 +107,7 @@ table.table-default th {
     border-bottom: 2px solid black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+    margin: 0px;
     background-color: rgb(4, 138, 143);
     font-size: 20px;
     padding: 5px;
@@ -119,4 +121,3 @@ table.table-default td {
     font-size: 18px;
     padding: 5px;
 }
-
