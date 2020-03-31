@@ -61,7 +61,6 @@ export function handleSelectChange(select: HTMLSelectElement, ttlID: string, ite
     // Determine which select item it is.
     switch(select.id) {
         case "education_select":
-
             // Get the select specific information.
             var sesStorage = sesStrVar.currEdTab;
             var ttlString = "Courses completed at ";
@@ -70,6 +69,15 @@ export function handleSelectChange(select: HTMLSelectElement, ttlID: string, ite
             createEducationTable(currValue, function(htmlString) {
                 $(itemID).html(htmlString);
             });
+        break;
+
+        case "experience_select":
+            var sesStorage = sesStrVar.currExList;
+            var ttlString = "";
+
+            createExperienceList(currValue, function(htmlString) {
+                $(itemID).html(htmlString);
+            })
         break;
 
         default:
@@ -123,27 +131,4 @@ export function handleSelectOnReady(selectID: string, ttlID: string, itemID: str
                 $(itemID).html(htmlString);
             });
     }
-}
-
-// Functions attach functions to controls specific to each page.
-function loadEducation(): void {
-    // Change table contents when the drop down changes.
-    $(document).on("change", "select: #education_select", function() {
-        // Grabs vurrent selections value.
-        var currSelection = $(this).val()
-
-        // Grabs text of the current selection.
-        var currName = $("#" + this.id + " :selected").text();
-
-        // Fill the table.
-        createEducationTable(currSelection, function(htmlString) {
-            $("#course_table").html(htmlString);
-        });
-
-        // Set title.
-        $("#education_title").text("Courses completed at " + currName);
-
-        // Set the session storage for the education table.
-        sessionStorage.setItem("currentEducationTable", currName);
-    })
 }

@@ -22,7 +22,7 @@ export function createEducationTable(id, callback): void {
         }
 
         // Creat array of class objects.
-        var htmlStr = "";
+        var htmlString = "";
         var classes: Class[] = [];
         for(var i: number = 0, j: number = 0; i < data.length; i++) {
             // i++ necessary to skip "\n".
@@ -41,12 +41,12 @@ export function createEducationTable(id, callback): void {
         // Build html string.
         var c: any;
         for(c of classes) {
-            htmlStr += "<tr><td><a href=\"" + c.url +"\" target==\"_blank\">";
-            htmlStr += c.code + "</a></td>";
-            htmlStr += "<td>" + c.name + "</td></tr>";
+            htmlString += "<tr><td><a href=\"" + c.url +"\" target==\"_blank\">";
+            htmlString += c.code + "</a></td>";
+            htmlString += "<td>" + c.name + "</td></tr>";
         }
 
-        callback(htmlStr);
+        callback(htmlString);
     });
 }
 
@@ -58,8 +58,25 @@ export function createExperienceList(id, callback) {
         url: docPath,
         dataType: "text"
     }).done(function(data) {
+        // Split data based on end of line.
         data = data.split("\r\n");
 
-        console.log(data);
-    })
+        // Create html string.
+        var htmlString = "";
+        for(var i = 0; i < data.length; i++) {
+            // Create title.
+            htmlString += "<h2>" + data[i] + "</h2>";
+
+            // Create body.
+            htmlString += "<p>";
+            while(data[++i] != "" && i < data.length) {
+                htmlString += data[i];
+            }
+            htmlString += "</p>";
+
+        }
+        
+        // Return the html.
+        callback(htmlString);
+    });
 }
