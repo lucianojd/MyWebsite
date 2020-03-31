@@ -1,5 +1,4 @@
 Architecture of Computers
-
 ECE 255 introduced me to the various components present in a computer. 
 Memory, input and output devices, instruction cycles, assembly language, buses, and processors were covered in the course. 
 I'm familiar with various memory types such as ROM, RAM ,Hard Disk Drives, cache and processor registers. 
@@ -9,7 +8,6 @@ I know how to build subroutines. We were introduced to the system bus; the syste
 Register usage and the binary versions of instructions were covered. Word length and the advantages and disadvantages of having longer words was taught as well.
 
 Mathematics
-
 I've completed one 100 level course for linear algebra and two 100 level courses for calculus. 
 I have completed a 200 level course for time signals and systems. 
 Solving matrices, matrix arithmetic, eigenvalues and eigenvectors, transformation matrices, complex numbers, and working with spaces of various dimension described by real or complex valued unit vectors are all concepts I've learned from linear algebra. 
@@ -18,7 +16,6 @@ In time signals and systems, I gained the tools to convert a signal into a Fouri
 The course introduced to the basics of sampling and interpolation, amplitude modulation, and modelling systems using differential equations.
 
 Programming Languages
-
 I am familiar with Java, C++, C, HTML, and CSS. I am also familiar with ARM Assembly language.
 Specifically, I've programmed the STM32 Cortex™-M0 processor in my Computer Architecture course: ECE 255. 
 The languages I'm most familiar with are Java and C++; both languages were introduced to me in university. 
