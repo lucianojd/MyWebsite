@@ -105,5 +105,14 @@ export function handleSelectOnReady(selectID, ttlID, itemID) {
             createEducationTable(currItem, function (htmlString) {
                 $(itemID).html(htmlString);
             });
+            break;
+        case "#experience_select":
+            createExperienceList(currItem, function (htmlString) {
+                $(itemID).html(htmlString);
+            });
+            break;
+        default:
+            alert("Couldn't find the requested item.");
+            break;
     }
 }

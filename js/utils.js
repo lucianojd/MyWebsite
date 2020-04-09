@@ -64,7 +64,6 @@ export function createExperienceList(id, callback) {
             }
             htmlString += "</p>";
         }
-        console.log(htmlString);
         // Return the html.
         callback(htmlString);
     });
