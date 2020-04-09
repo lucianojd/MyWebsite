@@ -1,9 +1,9 @@
 #profile_img {
-    height: 80vh;
-    margin: 50px;
     border-color: black;
     border-style: solid;
     border-radius: 15px;
+    height: 80vh;
+    margin: 50px;
 }
 
 #contact {

@@ -1,19 +1,7 @@
-th.course_code {
-    width: 20%;
-}
-
-th.course_name {
-    width: 80%;
-}
-
 section.education_table {
-    margin: 3vh;
-    width: 70%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-}
-
-#education_table_body tr:hover {
-    background-color: rgb(163, 161, 161);
+    justify-content: flex-start;
+    margin: 2%;
+    width: 70%;
 }

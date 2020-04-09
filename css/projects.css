@@ -1,7 +1,7 @@
 section.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     margin: 3vh;
     width: 70%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
 }
