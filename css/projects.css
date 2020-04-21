@@ -1,7 +1,0 @@
-section.projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 3vh;
-    width: 70%;
-}

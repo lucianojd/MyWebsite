@@ -1,4 +1,4 @@
-/*Contianer styling.*/
+/*Container styling.*/
 #menu-container {
     background-image: url("/resources/images/black.jpg");
     display: flex;
@@ -120,4 +120,83 @@ table.table-default tr:hover {
 table.table-default td {
     font-size: 18px;
     padding: 5px;
+}
+
+/*menu*/
+.menu table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.menu td {
+    margin: auto;
+}
+
+.menu tr {
+    margin: 5px;
+}
+
+
+/*home page*/
+#profile_img {
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+    height: 80vh;
+    margin: 50px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 50%;
+}
+
+#about_me {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+p {
+    width: 70%;
+}
+
+/*education page*/
+section.education_table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2%;
+    width: 70%;
+}
+
+/*experience page*/
+section.experience {
+    width: 50%;
+}
+
+#experience_list {
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    height: 80%;
+    overflow-y: scroll;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/*interests page*/
+section.interests {
+    margin: 2%;
+}
+
+/*projects page*/
+section.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 3vh;
+    width: 70%;
 }

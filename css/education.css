@@ -1,7 +1,0 @@
-section.education_table {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 2%;
-    width: 70%;
-}
