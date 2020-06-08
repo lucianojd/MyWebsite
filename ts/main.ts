@@ -1,134 +1,146 @@
-import { createEducationTable, createExperienceList } from "./utils.js"
-
 // Global variables
-var trgts = {
+const con = {
     menu: "#menu-container",
-    page: "#page-container"
+    page: "#page-container",
+    eduTab: "#education_table",
+    expList: "#experience_list"
 }
 
-var sesStrVar = {
+const sesVar = {
     currPg: "currentPage",
     currEdTab: "currentEducationTable",
     currExList: "currentExperienceList"
 }
 
-var path = {
-    html: "/html/"
+const p = {
+    html: "html/",
+    ext: ".html",
+    doc: "resources/data/"
 }
 
-// Set up page.
-$(document).ready(function () {
-    // Load menu.
-    $(trgts.menu).load(path.html + "menu.html");
+const educationDocuments = [
+    "uvic_courses",
+    "ufv_courses"
+]
 
-    //  Load the last page open.
-    var defaultPage: string = "home";
-
-    if(!sessionStorage.getItem(sesStrVar.currPg)) {
-        sessionStorage.setItem(sesStrVar.currPg, defaultPage);
+$(document).ready(function(){
+    // Load default page or last loaded page.
+    if(!sessionStorage.getItem(sesVar.currPg)) {
+        sessionStorage.setItem(sesVar.currPg, "home");
     }
+    $(con.page).load(p.html + sessionStorage.getItem(sesVar.currPg) + p.ext);
 
-    var currentPage = sessionStorage.getItem(sesStrVar.currPg);
-    $(trgts.page).load(path.html + currentPage + ".html");
-})
+    // Menu buttons load the and update the current page.
+    $("button").click(function(){
+        $(con.page).load(p.html + this.id + p.ext);
+        sessionStorage.setItem(sesVar.currPg, this.id);
+        loadPageElements(this.id);
+    });
 
-// Handle button presses.
-export function buttonHandler(button: HTMLButtonElement) {
-    switch(button.id) {
-        case "education":
-        case "experience":
+    // Load the page elements.
+    loadPageElements(sessionStorage.getItem(sesVar.currPg));
+
+    // Handles when a select element changes.
+    $(document).on("change", "select", function() {
+        switch(this.id) {
+            case "education_select":
+                var index = this.value;
+                loadEducationTable(educationDocuments[index]);
+                sessionStorage.setItem(sesVar.currEdTab, index);
+            break;
+
+            case "experience_select":
+
+            break;
+
+            default:
+                alert("Could not find any actions to perform for: " + this.id);
+            break;
+        }
+    });
+});
+
+// Loads elements when a page is first loaded.
+function loadPageElements(page: string): void {
+    switch(page) {
         case "home":
+
+        break;
+
+        case "education":
+            // Check if a table has been loaded
+            if(!sessionStorage.getItem(sesVar.currEdTab)) {
+                sessionStorage.setItem(sesVar.currEdTab, "0");
+            }
+
+            var index = parseInt(sessionStorage.getItem(sesVar.currEdTab));
+
+            if(index > educationDocuments.length) {
+                alert("That table could not be loaded. Loading the default table.");
+            }
+
+            // Load the default or last loaded table.
+            loadEducationTable(educationDocuments[index])
+        break;
+
+        case "experience":
+
+        break;
+
         case "interests":
+
+        break;
+
         case "projects":
-            // Load and store the page as the current page.
-            var page = path.html + button.id + ".html";
-            $(trgts.page).load(page);
-            sessionStorage.setItem(sesStrVar.currPg, button.id);
+
         break;
 
         default:
-            alert("That button is not currently working. Please try another.");
+            alert("Could not load the items for the page.");
         break;
     }
 }
 
-// Handle select changes.
-export function handleSelectChange(select: HTMLSelectElement, ttlID: string, itemID: string): void {
-    // Get name and value of selected item.
-    var currValue = select.value;
-    var currName = $("#" + select.id + " :selected").text();
+// Creates and loads the education table cased on the document passed.
+function loadEducationTable(docName: string): void {
+    let xhttp = new XMLHttpRequest();
+    let docPath = p.doc + docName + ".txt";
 
-    // Determine which select item it is.
-    switch(select.id) {
-        case "education_select":
-            // Get the select specific information.
-            var sesStorage = sesStrVar.currEdTab;
-            var ttlString = "Courses completed at ";
+    xhttp.onreadystatechange = function () {
+        // Insert loading icon.
+        if(this.readyState == 1) {
+            $(con.eduTab).html("<tr><td colspan=\"2\"><img class=\"loading\" src=\"resources/images/infinity_loading.gif\"></img></td></tr>");
+        }
 
-            // Load the education table.
-            createEducationTable(currValue, function(htmlString) {
-                $(itemID).html(htmlString);
-            });
-        break;
+        // When the response completes load the table.
+        if(this.readyState == 4 && this.status == 200) {
+            let text = this.responseText.split("\r\n");
+            let str: string = "";
 
-        case "experience_select":
-            var sesStorage = sesStrVar.currExList;
-            var ttlString = "";
+            // Concatenate the contents of the file with the html formatting.
+            // i is the course code.
+            // i+1 is the course name.
+            // i+2 is the URL to the academic calendar.
+            for(var i = 0; i < text.length; i = i + 4) {
+                str += "<tr><td><a href=\"" + text[i+2] + "\">" + text[i] + "</td>";
+                str += "<td> " + text[i+1] + "</td></tr>";
+            }
 
-            createExperienceList(currValue, function(htmlString) {
-                $(itemID).html(htmlString);
-            })
-        break;
+            // Insert the text.
+            $(con.eduTab).html(str);
+        }
 
-        default:
-            alert("Item could not be loaded. Make another selection");
-        break;
+        // If the table can't be found alert the user.
+        if(this.readyState == 4 && this.status == 404 || this.status == 403) {
+            alert("Could not load: " + docName)
+        }
     }
 
-    // Set title.
-    $(ttlID).text(ttlString + currName);
-
-    //Set session storage.
-    sessionStorage.setItem(sesStorage, currValue);
+    xhttp.open("GET", docPath, true);
+    xhttp.send();
 }
 
-export function handleSelectOnReady(selectID: string, ttlID: string, itemID: string): void {
-    switch(selectID) {
-        case "#education_select":
-            var sesStorage = sesStrVar.currEdTab;
-            var ttlString = "Courses completed at ";
-        break;
+function buildExperienceList(id: string): string {
 
-        case "#experience_select":
-            var sesStorage = sesStrVar.currExList;
-            var ttlString = "";
-        break;
-
-        default:
-            alert("Could not load previous item.");
-        return;
-    }
-
-    // Check for last loaded item.
-    var currItem: any = sessionStorage.getItem(sesStorage);
-
-    // Set default item if none is present.
-    if(!currItem) {
-        currItem = $(selectID).val();
-        sessionStorage.setItem(sesStorage, currItem);
-    }
-
-    // Switch select to current item.
-    $(selectID).val(currItem);
-
-    // Set title.
-    $(ttlID).text(ttlString + $(selectID + " :selected").text());
-
-    // Create the item.
-    switch(selectID) {
-        case "#education_select":
-            createEducationTable(currItem, function(htmlString) {
-                $(itemID).html(htmlString);
-            });
-    }
+    return null;
 }
