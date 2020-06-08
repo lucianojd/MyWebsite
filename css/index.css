@@ -84,6 +84,11 @@ h2 {
     font-size: 1.5em;
 }
 
+img.loading {
+    display: flex;
+    margin: auto;
+}
+
 section.window {
     display: flex;
     flex-direction: row;
