@@ -23,18 +23,65 @@ const educationDocuments = [
     "ufv_courses"
 ]
 
+const experienceDocuments = [
+    "soft_skills",
+    "technical_skills",
+    "work_experience"
+]
+
+class educationListItem {
+    private courseCode: string
+    private courseName: string
+    private courseURL: string
+
+    constructor(courseCode: string, courseName: string, courseURL: string) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.courseURL = courseURL;
+    }
+
+    public getCode() {
+        return this.courseCode;
+    }
+
+    public getName() {
+        return this.courseName;
+    }
+
+    public getURL() {
+        return this.courseURL;
+    }
+}
+
+class experienceListItem {
+    private title: string;
+    private par: string;
+}
+
 $(document).ready(function(){
     // Load default page or last loaded page.
     if(!sessionStorage.getItem(sesVar.currPg)) {
         sessionStorage.setItem(sesVar.currPg, "home");
     }
+
     $(con.page).load(p.html + sessionStorage.getItem(sesVar.currPg) + p.ext);
 
     // Menu buttons load the and update the current page.
     $("button").click(function(){
-        $(con.page).load(p.html + this.id + p.ext);
-        sessionStorage.setItem(sesVar.currPg, this.id);
-        loadPageElements(this.id);
+        let xhttp = new XMLHttpRequest();
+        let page = p.html + this.id + p.ext;
+        let pageID = this.id;
+
+        xhttp.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200) {
+                $(con.page).html(this.responseText);
+                sessionStorage.setItem(sesVar.currPg, pageID);
+                loadPageElements(pageID);
+            }
+        }
+
+        xhttp.open("GET", page, true);
+        xhttp.send();
     });
 
     // Load the page elements.
@@ -62,37 +109,40 @@ $(document).ready(function(){
 
 // Loads elements when a page is first loaded.
 function loadPageElements(page: string): void {
+    let index;
+
     switch(page) {
-        case "home":
-
-        break;
-
         case "education":
-            // Check if a table has been loaded
+            // Check if a table has been loaded previously.
             if(!sessionStorage.getItem(sesVar.currEdTab)) {
                 sessionStorage.setItem(sesVar.currEdTab, "0");
             }
 
-            var index = parseInt(sessionStorage.getItem(sesVar.currEdTab));
+            index = parseInt(sessionStorage.getItem(sesVar.currEdTab));
 
             if(index > educationDocuments.length) {
                 alert("That table could not be loaded. Loading the default table.");
+                index = 0;
             }
 
+            // Set the select value.
+            $("#education_select").val(index);
+
             // Load the default or last loaded table.
-            loadEducationTable(educationDocuments[index])
+            loadEducationTable(educationDocuments[index]);
         break;
 
         case "experience":
+            if(!sessionStorage.getItem(sesVar.currExList)) {
+                sessionStorage.setItem(sesVar.currExList, "0");
+            }
 
+            index = parseInt(sessionStorage.getItem(sesVar.currExList));
+
+            if(index > expre)
         break;
 
-        case "interests":
-
-        break;
-
-        case "projects":
-
+        case "home": case "interests": case "projects":
         break;
 
         default:
@@ -107,27 +157,42 @@ function loadEducationTable(docName: string): void {
     let docPath = p.doc + docName + ".txt";
 
     xhttp.onreadystatechange = function () {
-        // Insert loading icon.
         if(this.readyState == 1) {
-            $(con.eduTab).html("<tr><td colspan=\"2\"><img class=\"loading\" src=\"resources/images/infinity_loading.gif\"></img></td></tr>");
+            $(con.eduTab).html("");
         }
 
         // When the response completes load the table.
         if(this.readyState == 4 && this.status == 200) {
-            let text = this.responseText.split("\r\n");
+            let text: string[] = this.responseText.split("\r\n");
+            let items: educationListItem[] = [];
             let str: string = "";
 
-            // Concatenate the contents of the file with the html formatting.
+            // Create educationListItems to be sorted.
             // i is the course code.
             // i+1 is the course name.
             // i+2 is the URL to the academic calendar.
             for(var i = 0; i < text.length; i = i + 4) {
-                str += "<tr><td><a href=\"" + text[i+2] + "\">" + text[i] + "</td>";
-                str += "<td> " + text[i+1] + "</td></tr>";
+                items.push(new educationListItem(text[i], text[i+1], text[i+2]));
             }
 
-            // Insert the text.
-            $(con.eduTab).html(str);
+            items.sort(function (a: educationListItem, b: educationListItem): number {
+                if(a.getName() > b.getCode())
+                    return 1;
+
+                if(a.getName() < b.getCode())
+                    return -1;
+
+                if(a.getName() == b.getCode())
+                    return 0;
+            });
+
+            for(let item of items) {
+                str+="<tr><td><a href=\"" + item.getURL() + "\">"
+                str+=item.getCode()+"</td>";
+                str+="<td>"+item.getName()+"</td></tr>";
+                $(con.eduTab).append(str)
+                str="";
+            }
         }
 
         // If the table can't be found alert the user.
