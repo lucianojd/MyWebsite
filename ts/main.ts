@@ -56,6 +56,19 @@ class educationListItem {
 class experienceListItem {
     private title: string;
     private par: string;
+
+    constructor(title: string, par: string) {
+        this.title = title;
+        this.par = par;
+    }
+
+    public getTitle() {
+        return this.title;
+    }
+
+    public getPar() {
+        return this.par;
+    }
 }
 
 $(document).ready(function(){
@@ -97,7 +110,9 @@ $(document).ready(function(){
             break;
 
             case "experience_select":
-
+                var index = this.value;
+                loadExperienceList(experienceDocuments[index]);
+                sessionStorage.setItem(sesVar.currExList, index);
             break;
 
             default:
@@ -139,7 +154,15 @@ function loadPageElements(page: string): void {
 
             index = parseInt(sessionStorage.getItem(sesVar.currExList));
 
-            if(index > expre)
+            if(index > experienceDocuments.length) {
+                alert("Could not find the desired list.")
+                index = 0;
+            }
+
+            $("#experience_select").val(index);
+
+            //Load the experience list.
+            loadExperienceList(experienceDocuments[index]);
         break;
 
         case "home": case "interests": case "projects":
@@ -157,9 +180,8 @@ function loadEducationTable(docName: string): void {
     let docPath = p.doc + docName + ".txt";
 
     xhttp.onreadystatechange = function () {
-        if(this.readyState == 1) {
+        if(this.readyState == 1)
             $(con.eduTab).html("");
-        }
 
         // When the response completes load the table.
         if(this.readyState == 4 && this.status == 200) {
@@ -171,9 +193,8 @@ function loadEducationTable(docName: string): void {
             // i is the course code.
             // i+1 is the course name.
             // i+2 is the URL to the academic calendar.
-            for(var i = 0; i < text.length; i = i + 4) {
+            for(var i = 0; i < text.length; i = i + 4)
                 items.push(new educationListItem(text[i], text[i+1], text[i+2]));
-            }
 
             items.sort(function (a: educationListItem, b: educationListItem): number {
                 if(a.getName() > b.getCode())
@@ -182,30 +203,79 @@ function loadEducationTable(docName: string): void {
                 if(a.getName() < b.getCode())
                     return -1;
 
-                if(a.getName() == b.getCode())
-                    return 0;
+                 return 0;
             });
 
             for(let item of items) {
                 str+="<tr><td><a href=\"" + item.getURL() + "\">"
                 str+=item.getCode()+"</td>";
                 str+="<td>"+item.getName()+"</td></tr>";
-                $(con.eduTab).append(str)
-                str="";
             }
+
+            $(con.eduTab).append(str);
         }
 
         // If the table can't be found alert the user.
-        if(this.readyState == 4 && this.status == 404 || this.status == 403) {
-            alert("Could not load: " + docName)
-        }
+        if(this.readyState == 4 && this.status == 404 || this.status == 403)
+            alert("Could not load: " + docName);
     }
 
     xhttp.open("GET", docPath, true);
     xhttp.send();
 }
 
-function buildExperienceList(id: string): string {
+function loadExperienceList(docName: string): void {
+    let xhttp = new XMLHttpRequest();
+    let docPath = p.doc + docName + ".txt";
 
-    return null;
+    xhttp.onreadystatechange = function () {
+        if(this.readyState == 1)
+            $(con.expList).html("");
+
+        //Parse document and insert the formatted text.
+        if(this.readyState == 4 && this.status == 200) {
+            let text: string[] = this.response.split("\r\n");
+            let items: experienceListItem[] = [];
+            let str: string = "";
+            let title: string = "";
+            let par: string = "";
+
+            //Parse the text.
+            for(let i: number = 0; i < text.length; i++) {
+                title = text[i];
+                while(text[i] != "" && i < text.length) {
+                    par += text[i];
+                    i++;
+                }
+
+                items.push(new experienceListItem(title, par));
+                title = "";
+                par = "";
+            }
+
+            //Sort by the title.
+            items.sort(function (a:experienceListItem, b:experienceListItem): number {
+                if(a.getTitle() > b.getTitle())
+                    return 1;
+
+                if(a.getTitle() < b.getTitle())
+                    return -1;
+
+                return 0;
+            });
+
+            for(let item of items) {
+                str+="<h1>" + item.getTitle() + "</h1>";
+                str+="<p>" + item.getPar() + "</p>";
+            }
+            
+            $(con.expList).html(str);
+        }
+
+        if(this.readyState == 4 && this.status == 404 || this.status == 403)
+            alert("Could not load: " + docName);
+    }
+
+    xhttp.open("GET", docPath, true);
+    xhttp.send();
 }
