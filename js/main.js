@@ -193,6 +193,7 @@ function loadExperienceList(docName) {
             //Parse the text.
             for (var i = 0; i < text.length; i++) {
                 title = text[i];
+                i++;
                 while (text[i] != "" && i < text.length) {
                     par += text[i];
                     i++;

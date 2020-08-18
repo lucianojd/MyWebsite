@@ -243,6 +243,8 @@ function loadExperienceList(docName: string): void {
             //Parse the text.
             for(let i: number = 0; i < text.length; i++) {
                 title = text[i];
+                i++;
+
                 while(text[i] != "" && i < text.length) {
                     par += text[i];
                     i++;
