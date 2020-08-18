@@ -1,9 +1,12 @@
 ACD Systems (Fall 2019 - Ongoing)
-Worked as quality assurance for their Window's and Mac products.
+Worked as quality assurance for their Window's and Mac products. Work with technical documentation 
+to test various products. Some items tested included: interaction with the application and server,
+application's processing of files, and the application's tools for modifying files.
+Worked with both a staging and production environment.
 
 City of Surrey (Summer 2018)
 Worked as a city labourer. Completed various tasks from trimming boulevards
-to cleaning sidewalks.
+to cleaning sidewalks in small teams.
 
 Costco Wholesale (Summer 2016 and Summer 2017)
-Worked in night merchandise stocking shelves
+Worked in night merchandise stocking shelves and covered for cahiers during busy hours.
