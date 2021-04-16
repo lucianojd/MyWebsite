@@ -6,26 +6,31 @@ var config = {
     scene: {
         preload: preload,
         create: create, 
-        update: update 
+        update: update
     },
-    physics: {
-        default: "arcade",
-        arcade: {
-            debug: "false"
-        }
-    }
 }
 
 var game = new Phaser.Game(config);
 var nodes = [];
 
+//Flags.
+var newNode = false;
+
 function preload() {
-    this.add.renderTexture(0,0,800,800);
+
 }
 
 function create() {
-    this.add.circle(200,200,40,0x1111ff);
+    
 }
 
 function update() {
+    if (newNode){
+        nodes.concat(new Node(this, nodes.length));
+        newNode = false;
+    }
+}
+
+function addNode() {
+    newNode = true;
 }
