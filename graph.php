@@ -21,12 +21,15 @@
                 flex-direction: column;
             }
 
-            #button-group {
+            #controls {
                 margin: auto;
             }
 		</style>
 	</head>
 	<body>
-          <input type="button" onclick="addNode()" value="Add Node">
+            <div id="controls">
+                <input type="button" onclick="addNode()" value="Add Node">
+                <input type="button" onclick="deleteNode()" value="Delete Node">
+            </div>
 	</body>
 </html>

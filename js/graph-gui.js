@@ -12,12 +12,24 @@ var config = {
 
 var game = new Phaser.Game(config);
 var nodes = [];
+var currentSelection;
 
 //Flags.
-var newNode = false;
+var addNodeFlag = false;
+var deleteNodeFlag = false;
 
 function preload() {
-
+    this.input.dragDistanceThreshold = 5;
+    this.input.on('pointerdown', function(pointer, GameObject) {
+        if (currentSelection != undefined) {
+            currentSelection.deselect();
+            currentSelection = null;
+        }
+        if (GameObject[0] != undefined) {
+            currentSelection = GameObject[0];
+            currentSelection.select();
+        }
+    });
 }
 
 function create() {
@@ -25,12 +37,31 @@ function create() {
 }
 
 function update() {
-    if (newNode){
-        nodes.concat(new Node(this, nodes.length));
-        newNode = false;
+    if (addNodeFlag) {
+        nodes[nodes.length] = new Node(this, nodes.length);
+        addNodeFlag = false;
+    }
+    if (deleteNodeFlag && currentSelection != undefined && currentSelection != null) {
+        //Remove node from list.
+        nodes.splice(currentSelection.id(), 1);
+
+        //Remove node from canvas.
+        currentSelection.destroy();
+        currentSelection = null;
+        deleteNodeFlag = false;
+    } else if(deleteNodeFlag) {
+        deleteNodeFlag = false;
     }
 }
 
 function addNode() {
-    newNode = true;
+    addNodeFlag = true;
+}
+
+function deleteNode() {
+    deleteNodeFlag = true;
+}
+
+function addEdge() {
+    newEdge = true;
 }
