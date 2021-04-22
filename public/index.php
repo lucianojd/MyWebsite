@@ -4,7 +4,7 @@
 		<title>lucianod</title>
 		<link rel="shortcut icon" src="/favicon.ico">
 		<link rel="stylesheet" href="/index.css">
-		<script src="/scripts/jquery-3.6.0.min.js"></script>
+		<script src="/js/jquery-3.6.0.min.js"></script>
 		<meta charset="utf-8">
 	</head>
 	<!--Body background image is from Toptal Subtle Patterns: https://www.toptal.com/designers/subtlepatterns/prism/-->
