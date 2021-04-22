@@ -1,23 +1,5 @@
-<!--
-File Name: skills.html
-Author: Luciano De Gianni    
-Date Modified: Jan.19th, 2018 
-Description: skills.html contains a list
-of my technical skills and soft skills.
--->
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			Skills
-		</title>
-		<link rel="stylesheet" href="styles\main.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\a.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\div.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\heading.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\p.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\table.css" type="text/css"/>
-	</head>
 <body>
 
 <!-- Table for jumping to skills -->

@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    /*Pattern prism.png is form Toptal Subtle Patterns: https://www.toptal.com/designers/subtlepatterns/prism/*/
+    background-image: url("/prism.png");
+}
+
+header {
+    font-size: larger;
+    border: 2px solid black;
+    background-color: #1399c6;
+    margin: auto;
+    width: 60vw;
+}
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: #aeb3b8;
+    margin: auto;
+    width: 60vw;
+}
+
+main {
+    border: 2px solid black;
+    background-color: white;
+    margin: auto;
+    width: 60vw;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #aeb3b8;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.1s;
+}
+
+li a:hover {
+    padding: 10px 12px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    background-color: #1399c6;
+}
+
+h1 {
+    margin: 5px;
+}
+
+h2 {
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
+}

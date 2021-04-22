@@ -1,28 +1,6 @@
-<!--
-File Name: interests.html
-Author: Luciano De Gianni    
-Date Modified: Jan.15th, 2018 
-Description: interests.html contains information
-about my hobbies and recreational activities
-I enjoy.
--->
-
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			Interests
-		</title>
-		<link rel="stylesheet" href="styles\main.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\a.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\div.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\heading.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\p.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\table.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\images.css" type="text/css"/>
-	</head>
 <body>
-<div class="body">
 	<h2>
 	Camping and Hiking
 	</h2>
@@ -34,10 +12,6 @@ I enjoy.
 		going back to hike the second and third peaks. The picture below is of my girlfriend and I at
 		the lower falls in Golden Ears. We spent the weekend camping at Gold Creek.
 		</p>
-	
-	<center>
-		<img src="styles\images\hike.jpg">
-	</center>
 	
 	<h2>
 	Basketball
@@ -70,6 +44,5 @@ I enjoy.
 		suspense. My favourite story of his would have to be Rita Hayworth and The Shawshank Redemption. The movie
 		The Shawshank Redemption is based on that story. 
 		</p>
-</div>
 </body>
 </html>

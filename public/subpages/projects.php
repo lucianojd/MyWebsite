@@ -1,23 +1,6 @@
-<!--
-File Name: projects.html
-Author: Luciano De Gianni    
-Date Modified: Jan.19th, 2018 
-Description: projects.html contains a list of
-my current and completed projects.
--->
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="styles\main.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\a.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\div.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\heading.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\p.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\table.css" type="text/css"/>
-		<title>Projects</title>
-	</head>
 <body>
-<div class="body">
 		<h2>
 			My GitHub
 		</h2>
@@ -75,6 +58,6 @@ my current and completed projects.
 					-->Unavailable</td>
 				</tr>
 		</table>
-</div>
+		<a href="/graph.php">graph</a>
 </body>
 </html>

@@ -1,25 +1,6 @@
-<!--
-File Name: education.html
-Author: Luciano De Gianni    
-Date Modified: Jan.15th, 2018 
-Description: education,html contains information about
-my current education including: current and previous schools, and 
-completed courses.
--->
-
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Education</title>
-		<link rel="stylesheet" href="styles\main.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\a.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\div.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\heading.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\p.css" type="text/css"/>
-		<link rel="stylesheet" href="styles\table.css" type="text/css"/>
-	</head>
 <body>
-<div class="body">
 	<h2>
 		University of Victoria
 	</h2>
@@ -276,6 +257,5 @@ completed courses.
 						</td>
 					</tr>
 		</table>
-</div>
 </body>
 </html>
